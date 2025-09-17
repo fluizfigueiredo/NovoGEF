@@ -113,7 +113,7 @@ namespace NovoGEF.Models
         }
 
         /// <summary>
-        /// Valida os dados do associado, retornando "ok" se todos os campos obrigatórios estiverem corretos,
+        /// Valida os dados da atividade, retornando "ok" se todos os campos obrigatórios estiverem corretos,
         /// ou uma mensagem de erro detalhando os campos inválidos ou ausentes.
         /// </summary>
         /// <returns>

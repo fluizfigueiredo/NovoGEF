@@ -26,6 +26,8 @@ using static NovoGEF.FrmAtividade;
 using static System.Windows.Forms.LinkLabel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using NovoGEF.Util;
+using NovoGEF.Models;
 
 namespace NovoGEF.Forms
 {
@@ -34,6 +36,7 @@ namespace NovoGEF.Forms
     /// </summary>
     public partial class FrmAgenda : Form
     {
+        Agenda _agenda = new Agenda();
         /// <summary>
         /// Inicializa uma nova instância do formulário de agenda.
         /// </summary>
