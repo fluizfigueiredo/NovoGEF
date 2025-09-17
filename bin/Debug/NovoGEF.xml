@@ -1,0 +1,3253 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NovoGEF</name>
+    </assembly>
+    <members>
+        <member name="T:NovoGEF.Conn">
+            <summary>
+            Classe estática responsável por fornecer a string de conexão com o banco de dados SQL Server.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.Conn.strConn">
+            <summary>
+            String de conexão utilizada para acessar o banco de dados 'fabiano' no SQL Server.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.geftb001_usuarioDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.geftb002_associadoDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.geftb003_atividadeDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.geftb004_associado_atividadeDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.geftb005_agendaDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.tbl_geftb002_CSVDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_diasemana_geftb003DataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_domingo_geftb005DataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_geftb002DataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_geftb003DataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_geftb004DataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_geftb005DataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_idnome_geftb002DataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_matnome_geftb002DataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_matricula_geftb002DataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_nivel_usuario_geftb001DataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_nome_geftb002DataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_periodo_geftb003DataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_recbolsa_geftb005DataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_usuario_geftb001DataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_validar_usuario_geftb001DataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.geftb001_usuarioRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.geftb002_associadoRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.geftb003_atividadeRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.geftb004_associado_atividadeRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.geftb005_agendaRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.tbl_geftb002_CSVRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_diasemana_geftb003Row">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_domingo_geftb005Row">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_geftb002Row">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_geftb003Row">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_geftb004Row">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_geftb005Row">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_idnome_geftb002Row">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_matnome_geftb002Row">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_matricula_geftb002Row">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_nivel_usuario_geftb001Row">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_nome_geftb002Row">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_periodo_geftb003Row">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_recbolsa_geftb005Row">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_usuario_geftb001Row">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_validar_usuario_geftb001Row">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.geftb001_usuarioRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.geftb002_associadoRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.geftb003_atividadeRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.geftb004_associado_atividadeRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.geftb005_agendaRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.tbl_geftb002_CSVRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_diasemana_geftb003RowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_domingo_geftb005RowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_geftb002RowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_geftb003RowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_geftb004RowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_geftb005RowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_idnome_geftb002RowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_matnome_geftb002RowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_matricula_geftb002RowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_nivel_usuario_geftb001RowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_nome_geftb002RowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_periodo_geftb003RowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_recbolsa_geftb005RowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_buscar_usuario_geftb001RowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSet.sp_validar_usuario_geftb001RowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.geftb001_usuarioTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.geftb002_associadoTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.geftb003_atividadeTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.geftb004_associado_atividadeTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.geftb005_agendaTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.tbl_geftb002_CSVTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.sp_buscar_diasemana_geftb003TableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.sp_buscar_domingo_geftb005TableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.sp_buscar_geftb002TableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.sp_buscar_geftb003TableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.sp_buscar_geftb004TableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.sp_buscar_geftb005TableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.sp_buscar_idnome_geftb002TableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.sp_buscar_matnome_geftb002TableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.sp_buscar_matricula_geftb002TableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.sp_buscar_nivel_usuario_geftb001TableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.sp_buscar_nome_geftb002TableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.sp_buscar_periodo_geftb003TableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.sp_buscar_recbolsa_geftb005TableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.sp_buscar_usuario_geftb001TableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.sp_validar_usuario_geftb001TableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.QueriesTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.TableAdapterManager">
+             <summary>
+            TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+            </summary>
+        </member>
+        <member name="M:NovoGEF.fabianoDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(NovoGEF.fabianoDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Update rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.fabianoDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(NovoGEF.fabianoDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Insert rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.fabianoDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(NovoGEF.fabianoDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Delete rows in bottom-up order.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.fabianoDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+            </summary>
+        </member>
+        <member name="M:NovoGEF.fabianoDataSetTableAdapters.TableAdapterManager.UpdateAll(NovoGEF.fabianoDataSet)">
+             <summary>
+            Update all changes to the dataset.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+             <summary>
+            Update Order Option
+            </summary>
+        </member>
+        <member name="T:NovoGEF.fabianoDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+             <summary>
+            Used to sort self-referenced table's rows
+            </summary>
+        </member>
+        <member name="T:NovoGEF.FrmAgenda">
+            <summary>
+            Formulário responsável pelo gerenciamento da agenda de associados e suas atividades.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.#ctor">
+            <summary>
+            Inicializa uma nova instância do formulário de agenda.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.Form1_Load(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao carregar o formulário. Verifica se o usuário está logado e inicializa controles.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.Mostrar_Associado">
+            <summary>
+            Exibe os dados do associado selecionado no grid.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.DgvGeftb002_CellClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            Evento disparado ao clicar em uma célula do grid de atividades.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.BtnSair_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário de agenda.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.BtnAtuReg_Click(System.Object,System.EventArgs)">
+            <summary>
+            Atualiza o registro do associado na agenda.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.AjustarGrid">
+            <summary>
+            Ajusta a visibilidade e largura das colunas do grid de associados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.RbFalta_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao alterar o estado do botão de falta.
+            Limpa o campo de justificativa.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.DtpAtividade_ValueChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao alterar a data da atividade.
+            Atualiza o nome do dia da semana e verifica registros.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.SearchAgenda">
+            <summary>
+            Pesquisa registros de agenda para a data selecionada.
+            </summary>
+            <returns>Retorna "S" se houver registros, "N" caso contrário.</returns>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.SearchHorario">
+            <summary>
+            Pesquisa o horário do associado selecionado.
+            </summary>
+            <returns>Retorna o horário como string ou null se não encontrado.</returns>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.AtualizarAgenda(System.Int32)">
+            <summary>
+            Atualiza a agenda dos associados conforme o dia da semana.
+            </summary>
+            <param name="diasemana">Número da semana do mês.</param>
+            <returns>Retorna "S" ao finalizar o processo.</returns>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.OcultarGrid">
+            <summary>
+            Oculta todas as colunas do grid de associados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.LimpaForm">
+            <summary>
+            Limpa todos os campos do formulário de agenda.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.GetNomeSemana(System.DateTime)">
+            <summary>
+            Retorna o nome do dia da semana para uma data informada.
+            </summary>
+            <param name="data">Data para consulta.</param>
+            <returns>Nome do dia da semana.</returns>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.DgvGeftb005_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao pressionar uma tecla no grid de associados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.DgvGeftb005_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Evento disparado ao pressionar uma tecla no grid de associados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.DgvGeftb005_KeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao liberar uma tecla no grid de associados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.BtnImpRecBolsa_Click(System.Object,System.EventArgs)">
+            <summary>
+            Gera o relatório de recebimento da bolsa de alimentos em PDF para o domingo.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.BtnImprime_Click(System.Object,System.EventArgs)">
+            <summary>
+            Abre o formulário de impressão de frequência de atividade.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.FrmAgenda.components">
+            <summary>
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.Dispose(System.Boolean)">
+            <summary>
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:NovoGEF.FrmAgenda.InitializeComponent">
+            <summary>
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.FrmAlteraSenha">
+            <summary>
+            Formulário responsável pela alteração de senha do usuário.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAlteraSenha.#ctor(System.String)">
+            <summary>
+            Inicializa uma nova instância do formulário de alteração de senha.
+            </summary>
+            <param name="matricula">Matrícula do usuário para alteração de senha.</param>
+        </member>
+        <member name="M:NovoGEF.FrmAlteraSenha.FormAlteraSenha_Load(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao carregar o formulário de alteração de senha.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAlteraSenha.BtnConfirmar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Confirma a alteração de senha do usuário ao clicar no botão Confirmar.
+            </summary>
+            <param name="sender">Objeto que disparou o evento.</param>
+            <param name="e">Argumentos do evento.</param>
+        </member>
+        <member name="M:NovoGEF.FrmAlteraSenha.BtnConf_Click(System.Object,System.EventArgs)">
+            <summary>
+            Confirma a alteração de senha do usuário ao clicar no botão Conf.
+            </summary>
+            <param name="sender">Objeto que disparou o evento.</param>
+            <param name="e">Argumentos do evento.</param>
+        </member>
+        <member name="M:NovoGEF.FrmAlteraSenha.BtnCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário de alteração de senha ao clicar no botão Cancelar.
+            </summary>
+            <param name="sender">Objeto que disparou o evento.</param>
+            <param name="e">Argumentos do evento.</param>
+        </member>
+        <member name="F:NovoGEF.FrmAlteraSenha.components">
+            <summary>
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAlteraSenha.Dispose(System.Boolean)">
+            <summary>
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:NovoGEF.FrmAlteraSenha.InitializeComponent">
+            <summary>
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.FrmAssociado">
+            <summary>
+            Formulário responsável pelo cadastro, pesquisa e atualização de associados e dependentes.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.#ctor">
+            <summary>
+            Inicializa uma nova instância do formulário de associado.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.FrmAssociado_Load(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao carregar o formulário. Verifica se o usuário está logado e inicializa variáveis globais.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.Limpa_Form">
+            <summary>
+            Limpa todos os campos do formulário de associado.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.IsValidForm">
+            <summary>
+            Realiza validações nos campos do formulário de associado.
+            </summary>
+            <returns>Retorna 0 se válido, 1 se houver erro.</returns>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.Btn_Pesquisar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao clicar no botão pesquisar. Realiza pesquisa conforme filtros selecionados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.Pesquisar_Geftb002(System.Int32)">
+            <summary>
+            Realiza pesquisa de associados conforme filtro informado.
+            </summary>
+            <param name="filtro">Filtro de pesquisa: 0=Todos, 1=Matricula, 2=Nome.</param>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.Mostrar_Associado">
+            <summary>
+            Exibe os dados do associado selecionado no grid.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.DgvGeftb002_CellClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            Evento disparado ao clicar em uma célula do grid de associados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.Cbx_Matricula_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao alterar o estado do checkbox de matrícula.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.Cbx_Nome_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao alterar o estado do checkbox de nome.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.FecharFormulárioToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário de associado.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.BtnCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Cancela a operação e retorna o formulário ao estado inicial.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.BtnConf_Click(System.Object,System.EventArgs)">
+            <summary>
+            Confirma o cadastro de associado ou dependente após validação dos campos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.BtnLimpForm_Click(System.Object,System.EventArgs)">
+            <summary>
+            Limpa os campos do formulário ao clicar no botão Limpar.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.BtnSair_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário de associado ao clicar no botão Sair.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.BtnCadAss_Click(System.Object,System.EventArgs)">
+            <summary>
+            Prepara o formulário para cadastro de associado titular.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.BtnCadDep_Click(System.Object,System.EventArgs)">
+            <summary>
+            Prepara o formulário para cadastro de dependente de associado.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.BtnAtuReg_Click(System.Object,System.EventArgs)">
+            <summary>
+            Atualiza os dados do associado após validação dos campos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.DgvGeftb002_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao pressionar uma tecla no grid de associados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.DgvGeftb002_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Evento disparado ao pressionar uma tecla no grid de associados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.DgvGeftb002_KeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao liberar uma tecla no grid de associados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.CbTipoAss_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao alterar o tipo de associado selecionado.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.RbTitular_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao selecionar o tipo titular.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.RbTodos_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao selecionar o tipo todos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.RbDependente_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao selecionar o tipo dependente.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.RbAtivo_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao selecionar situação ativa.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.RbInativo_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao selecionar situação inativa.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.CbxDtFim_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao alterar o estado do checkbox de data fim.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.FrmAssociado.components">
+            <summary>
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.Dispose(System.Boolean)">
+            <summary>
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:NovoGEF.FrmAssociado.InitializeComponent">
+            <summary>
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.FrmAssXAtv">
+            <summary>
+            Formulário responsável pela associação e gerenciamento de atividades dos associados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssXAtv.#ctor">
+            <summary>
+            Inicializa uma nova instância do formulário de associação de atividades.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssXAtv.Form1_Load(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao carregar o formulário. Inicializa controles e carrega dados de atividades.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssXAtv.BtnSair_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário de associação de atividades.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssXAtv.ReadGeftb002">
+            <summary>
+            Carrega as atividades associadas ao associado selecionado.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssXAtv.BtnAtiva_Click(System.Object,System.EventArgs)">
+            <summary>
+            Ativa uma atividade para o associado selecionado.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssXAtv.BtnDesativa_Click(System.Object,System.EventArgs)">
+            <summary>
+            Desativa a atividade selecionada do associado.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssXAtv.CbTipoAss_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao alterar o tipo de associado selecionado.
+            Atualiza a lista de associados conforme o tipo.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssXAtv.CbAssociado_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao alterar o associado selecionado.
+            Carrega as atividades do associado após a terceira seleção.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.FrmAssXAtv.components">
+            <summary>
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAssXAtv.Dispose(System.Boolean)">
+            <summary>
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:NovoGEF.FrmAssXAtv.InitializeComponent">
+            <summary>
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.FrmAtividade">
+            <summary>
+            Formulário responsável pelo cadastro, pesquisa e atualização de atividades.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.#ctor">
+            <summary>
+            Inicializa uma nova instância do formulário de atividade.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.Form1_Load(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao carregar o formulário. Verifica se o usuário está logado e inicializa os dados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.Limpa_Form">
+            <summary>
+            Limpa todos os campos do formulário de atividade.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.IsValidForm">
+            <summary>
+            Realiza validações nos campos do formulário de atividade.
+            </summary>
+            <returns>Retorna 0 se válido, 1 se houver erro.</returns>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.Btn_Pesquisar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao clicar no botão pesquisar. Realiza pesquisa de atividades conforme filtro.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.Pesquisar_Geftb003(System.Int32)">
+            <summary>
+            Realiza pesquisa de atividades conforme filtro informado.
+            </summary>
+            <param name="filtro">Filtro de pesquisa: 0=Ativos, 1=Inativos.</param>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.Mostrar_Atividade">
+            <summary>
+            Exibe os dados da atividade selecionada no grid.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.DgvGeftb003_CellClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            Evento disparado ao clicar em uma célula do grid de atividades.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.RbAssSoc_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao alterar o estado do botão de assistência social.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.RbColaborador_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao alterar o estado do botão de colaborador.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.Cbx_DtFim_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao clicar no checkbox de data fim.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.BtnCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Cancela a operação e retorna o formulário ao estado inicial.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.BtnConf_Click(System.Object,System.EventArgs)">
+            <summary>
+            Confirma o cadastro de atividade após validação dos campos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.BtnSair_Click_1(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário de atividade.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.BtnLimpForm_Click(System.Object,System.EventArgs)">
+            <summary>
+            Limpa os campos do formulário ao clicar no botão Limpar.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.BtnAtuReg_Click(System.Object,System.EventArgs)">
+            <summary>
+            Atualiza os dados da atividade após validação dos campos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.BtnCadastrar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Prepara o formulário para cadastro de nova atividade.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.DgvGeftb003_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao pressionar uma tecla no grid de atividades.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.DgvGeftb003_KeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao liberar uma tecla no grid de atividades.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.DgvGeftb003_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Evento disparado ao pressionar uma tecla no grid de atividades.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.BtnImpTabAtv_Click(System.Object,System.EventArgs)">
+            <summary>
+            Gera o relatório em PDF da tabela de atividades.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.DgvGeftb003_KeyUp_1(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao liberar uma tecla no grid de atividades.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.FrmAtividade.components">
+            <summary>
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.Dispose(System.Boolean)">
+            <summary>
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:NovoGEF.FrmAtividade.InitializeComponent">
+            <summary>
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.FrmBuscarAssociado">
+            <summary>
+            Formulário responsável pela busca e seleção de associados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmBuscarAssociado.#ctor">
+            <summary>
+            Inicializa uma nova instância do formulário de busca de associado.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmBuscarAssociado.FrmBuscarAssociado_Load(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao carregar o formulário. Verifica se o usuário está logado e inicializa os dados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmBuscarAssociado.Btn_Pesquisar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao clicar no botão pesquisar. Realiza pesquisa conforme filtros selecionados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmBuscarAssociado.Pesquisar_Geftb002(System.Int32)">
+            <summary>
+            Realiza pesquisa de associados conforme filtro informado.
+            </summary>
+            <param name="filtro">Filtro de pesquisa: 0=Todos, 1=Matricula, 2=Nome.</param>
+        </member>
+        <member name="M:NovoGEF.FrmBuscarAssociado.Cbx_Matricula_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao alterar o estado do checkbox de matrícula.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmBuscarAssociado.Cbx_Nome_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao alterar o estado do checkbox de nome.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmBuscarAssociado.FecharFormulárioToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário de busca de associado.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmBuscarAssociado.BtnConf_Click(System.Object,System.EventArgs)">
+            <summary>
+            Confirma a seleção do associado e retorna os dados para o formulário principal.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmBuscarAssociado.BtnSair_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário ao clicar no botão Sair.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.FrmBuscarAssociado.components">
+            <summary>
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmBuscarAssociado.Dispose(System.Boolean)">
+            <summary>
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:NovoGEF.FrmBuscarAssociado.InitializeComponent">
+            <summary>
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.FrmEstoqueMed">
+            <summary>
+            Formulário responsável pelo gerenciamento do estoque de medicamentos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.#ctor">
+            <summary>
+            Inicializa uma nova instância do formulário de estoque de medicamentos.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.FrmEstoqueMed.ATIVIDADE">
+            <summary>
+            Classe interna para representar uma atividade (não implementada).
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.Form1_Load(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao carregar o formulário. Verifica se o usuário está logado e inicializa os dados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.Pesquisar_Geftb007">
+            <summary>
+            Pesquisa e carrega os grupos de fármacos no combobox.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.Pesquisar_Geftb008">
+            <summary>
+            Pesquisa e carrega os medicamentos no grid de estoque.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.Limpa_Form">
+            <summary>
+            Limpa todos os campos do formulário de estoque de medicamentos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.IsValidForm">
+            <summary>
+            Realiza validações nos campos do formulário de estoque de medicamentos.
+            </summary>
+            <returns>Retorna 0 se válido, 1 se houver erro.</returns>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.Mostrar_EstoqueMed">
+            <summary>
+            Exibe os dados do medicamento selecionado no grid.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.BtnCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Cancela a operação e retorna o formulário ao estado inicial.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.BtnConf_Click(System.Object,System.EventArgs)">
+            <summary>
+            Confirma o cadastro de medicamento após validação dos campos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.BtnSair_Click_1(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário de estoque de medicamentos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.BtnLimpForm_Click(System.Object,System.EventArgs)">
+            <summary>
+            Limpa os campos do formulário ao clicar no botão Limpar.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.BtnAtuReg_Click(System.Object,System.EventArgs)">
+            <summary>
+            Atualiza os dados do medicamento após validação dos campos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.BtnCadastrar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Prepara o formulário para cadastro de novo medicamento.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.DgvGeftb008_CellClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            Evento disparado ao clicar em uma célula do grid de medicamentos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.DgvGeftb008_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao pressionar uma tecla no grid de medicamentos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.DgvGeftb008_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Evento disparado ao pressionar uma tecla no grid de medicamentos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.DgvGeftb008_KeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao liberar uma tecla no grid de medicamentos.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.FrmEstoqueMed.components">
+            <summary>
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.Dispose(System.Boolean)">
+            <summary>
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:NovoGEF.FrmEstoqueMed.InitializeComponent">
+            <summary>
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.FrmImpFreqAtv">
+            <summary>
+            Formulário responsável pela geração do relatório de frequência de atividades.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmImpFreqAtv.#ctor(System.String)">
+            <summary>
+            Inicializa uma nova instância do formulário de impressão de frequência de atividade.
+            </summary>
+            <param name="dtagenda">Data da agenda para geração do relatório.</param>
+        </member>
+        <member name="M:NovoGEF.FrmImpFreqAtv.FrmImpFreqAtv_Load(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao carregar o formulário. Carrega as atividades disponíveis para a data informada.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmImpFreqAtv.BtnConf_Click(System.Object,System.EventArgs)">
+            <summary>
+            Gera o relatório de presença da atividade selecionada.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmImpFreqAtv.BtnCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário de impressão de frequência de atividade.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.FrmImpFreqAtv.components">
+            <summary>
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmImpFreqAtv.Dispose(System.Boolean)">
+            <summary>
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:NovoGEF.FrmImpFreqAtv.InitializeComponent">
+            <summary>
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.FrmLivAutor">
+            <summary>
+            Formulário responsável pelo cadastro, pesquisa e atualização de autores de livros.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutor.#ctor">
+            <summary>
+            Inicializa uma nova instância do formulário de autor de livro.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutor.Form1_Load(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao carregar o formulário. Verifica se o usuário está logado e inicializa os dados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutor.IsValidForm">
+            <summary>
+            Realiza validação do campo nome do autor.
+            </summary>
+            <returns>Retorna 0 se válido, 1 se houver erro.</returns>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutor.Mostrar_Autor">
+            <summary>
+            Exibe os dados do autor selecionado no grid.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutor.Pesquisar_Geftb010">
+            <summary>
+            Pesquisa e carrega os autores no grid.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutor.BtnSair_Click_1(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário de autor de livro.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutor.BtnLimpForm_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento para limpar o formulário (não implementado).
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutor.BtnAtuReg_Click(System.Object,System.EventArgs)">
+            <summary>
+            Atualiza os dados do autor após validação dos campos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutor.BtnCadastrar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Prepara o formulário para cadastro de novo autor.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutor.DgvGeftb010_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao pressionar uma tecla no grid de autores.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutor.DgvGeftb010_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Evento disparado ao pressionar uma tecla no grid de autores.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutor.DgvGeftb010_KeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao liberar uma tecla no grid de autores.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutor.DgvGeftb010_CellClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            Evento disparado ao clicar em uma célula do grid de autores.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutor.BtnConf_Click(System.Object,System.EventArgs)">
+            <summary>
+            Confirma o cadastro de autor após validação dos campos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutor.BtnCan_Click(System.Object,System.EventArgs)">
+            <summary>
+            Cancela a operação e retorna o formulário ao estado inicial.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.FrmLivAutor.components">
+            <summary>
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutor.Dispose(System.Boolean)">
+            <summary>
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutor.InitializeComponent">
+            <summary>
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.FrmLivAutorEsp">
+            <summary>
+            Formulário responsável pelo cadastro, pesquisa e atualização de autores espirituais de livros.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutorEsp.#ctor">
+            <summary>
+            Inicializa uma nova instância do formulário de autor espiritual de livro.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutorEsp.Form1_Load(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao carregar o formulário. Verifica se o usuário está logado e inicializa os dados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutorEsp.IsValidForm">
+            <summary>
+            Realiza validação do campo nome do autor espiritual.
+            </summary>
+            <returns>Retorna 0 se válido, 1 se houver erro.</returns>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutorEsp.Mostrar_Autor">
+            <summary>
+            Exibe os dados do autor espiritual selecionado no grid.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutorEsp.Pesquisar_Geftb009">
+            <summary>
+            Pesquisa e carrega os autores espirituais no grid.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutorEsp.BtnSair_Click_1(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário de autor espiritual de livro.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutorEsp.BtnLimpForm_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento para limpar o formulário (não implementado).
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutorEsp.BtnAtuReg_Click(System.Object,System.EventArgs)">
+            <summary>
+            Atualiza os dados do autor espiritual após validação dos campos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutorEsp.BtnCadastrar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Prepara o formulário para cadastro de novo autor espiritual.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutorEsp.DgvGeftb009_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao pressionar uma tecla no grid de autores espirituais.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutorEsp.DgvGeftb009_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Evento disparado ao pressionar uma tecla no grid de autores espirituais.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutorEsp.DgvGeftb009_KeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao liberar uma tecla no grid de autores espirituais.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutorEsp.DgvGeftb009_CellClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            Evento disparado ao clicar em uma célula do grid de autores espirituais.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutorEsp.BtnConf_Click(System.Object,System.EventArgs)">
+            <summary>
+            Confirma o cadastro de autor espiritual após validação dos campos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutorEsp.BtnCan_Click(System.Object,System.EventArgs)">
+            <summary>
+            Cancela a operação e retorna o formulário ao estado inicial.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.FrmLivAutorEsp.components">
+            <summary>
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutorEsp.Dispose(System.Boolean)">
+            <summary>
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:NovoGEF.FrmLivAutorEsp.InitializeComponent">
+            <summary>
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.FrmLivEditora">
+            <summary>
+            Formulário responsável pelo cadastro, pesquisa e atualização de editoras de livros.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.#ctor">
+            <summary>
+            Inicializa uma nova instância do formulário de editora de livro.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.FrmLivEditora_Load(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao carregar o formulário. Verifica se o usuário está logado e inicializa os dados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.Limpa_Form">
+            <summary>
+            Limpa todos os campos do formulário de editora.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.IsValidForm">
+            <summary>
+            Realiza validações nos campos do formulário de editora.
+            </summary>
+            <returns>Retorna 0 se válido, 1 se houver erro.</returns>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.IsValidEmail(System.String)">
+            <summary>
+            Valida o e-mail informado.
+            </summary>
+            <param name="email">E-mail a ser validado.</param>
+            <returns>Retorna 0 se válido, 1 se inválido.</returns>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.IsValidCNPJ">
+            <summary>
+            Valida o CNPJ informado.
+            </summary>
+            <returns>Retorna 0 se válido, 1 se inválido.</returns>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.Pesquisar_Geftb011">
+            <summary>
+            Pesquisa e carrega as editoras no grid.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.Mostrar_Editora">
+            <summary>
+            Exibe os dados da editora selecionada no grid.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.DgvGeftb011_CellClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            Evento disparado ao clicar em uma célula do grid de editoras.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.FecharFormulárioToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário de editora.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.BtnCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Cancela a operação e retorna o formulário ao estado inicial.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.BtnLimpForm_Click(System.Object,System.EventArgs)">
+            <summary>
+            Limpa os campos do formulário ao clicar no botão Limpar.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.BtnSair_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário de editora ao clicar no botão Sair.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.BtnAtuReg_Click(System.Object,System.EventArgs)">
+            <summary>
+            Atualiza os dados da editora após validação dos campos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.DgvGeftb011_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao pressionar uma tecla no grid de editoras.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.DgvGeftb011_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Evento disparado ao pressionar uma tecla no grid de editoras.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.DgvGeftb011_KeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao liberar uma tecla no grid de editoras.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.BtnConf_Click(System.Object,System.EventArgs)">
+            <summary>
+            Confirma o cadastro de editora após validação dos campos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.BtnCan_Click(System.Object,System.EventArgs)">
+            <summary>
+            Cancela a operação e retorna o formulário ao estado inicial.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.BtnCadastrar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Prepara o formulário para cadastro de nova editora.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.FrmLivEditora.components">
+            <summary>
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.Dispose(System.Boolean)">
+            <summary>
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:NovoGEF.FrmLivEditora.InitializeComponent">
+            <summary>
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.FrmLivraria">
+            <summary>
+            Formulário responsável pelo cadastro, pesquisa e atualização de livros na livraria.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.#ctor">
+            <summary>
+            Inicializa uma nova instância do formulário de livraria.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.FrmLivraria_Load(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao carregar o formulário. Verifica se o usuário está logado e inicializa os dados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.Limpa_Form">
+            <summary>
+            Limpa todos os campos do formulário de livraria.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.Pesquisar_Geftb009">
+            <summary>
+            Pesquisa e carrega os autores espirituais no combobox.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.Pesquisar_Geftb010">
+            <summary>
+            Pesquisa e carrega os autores no combobox.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.Pesquisar_Geftb011">
+            <summary>
+            Pesquisa e carrega as editoras no combobox.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.IsValidForm">
+            <summary>
+            Realiza validações nos campos do formulário de livro.
+            </summary>
+            <returns>Retorna 0 se válido, 1 se houver erro.</returns>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.Btn_Pesquisar_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao clicar no botão pesquisar. Realiza pesquisa conforme filtros selecionados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.Pesquisar_Geftb012(System.Int32)">
+            <summary>
+            Realiza pesquisa de livros conforme filtro informado.
+            </summary>
+            <param name="filtro">Filtro de pesquisa: 0=Código, 1=Título, 2=Assunto, 3=Todos.</param>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.Mostrar_Livraria">
+            <summary>
+            Exibe os dados do livro selecionado no grid.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.DgvGeftb002_CellClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            Evento disparado ao clicar em uma célula do grid de livros.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.CbxCodigo_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao alterar o estado do checkbox de código.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.CbxTitulo_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao alterar o estado do checkbox de título.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.CbxAssunto_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao alterar o estado do checkbox de assunto.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.BtnCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Cancela a operação e retorna o formulário ao estado inicial.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.BtnConf_Click(System.Object,System.EventArgs)">
+            <summary>
+            Confirma o cadastro de livro após validação dos campos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.BtnLimpForm_Click(System.Object,System.EventArgs)">
+            <summary>
+            Limpa os campos do formulário ao clicar no botão Limpar.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.BtnSair_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário de livraria ao clicar no botão Sair.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.BtnCadAss_Click(System.Object,System.EventArgs)">
+            <summary>
+            Prepara o formulário para cadastro de novo livro.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.BtnAtuReg_Click(System.Object,System.EventArgs)">
+            <summary>
+            Atualiza os dados do livro após validação dos campos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.DgvGeftb002_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao pressionar uma tecla no grid de livros.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.DgvGeftb002_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Evento disparado ao pressionar uma tecla no grid de livros.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.DgvGeftb002_KeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao liberar uma tecla no grid de livros.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.TbVlUnitario_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Validação de entrada para campo valor unitário (aceita apenas números e vírgula).
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.TbVlLivraria_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Validação de entrada para campo valor livraria (aceita apenas números e vírgula).
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.TbVlFeira_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Validação de entrada para campo valor feira (aceita apenas números e vírgula).
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.BtnCadAutor_Click(System.Object,System.EventArgs)">
+            <summary>
+            Abre o formulário de cadastro de autor.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.BtnCadAutorEsp_Click(System.Object,System.EventArgs)">
+            <summary>
+            Abre o formulário de cadastro de autor espiritual.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.BtnCadEditora_Click(System.Object,System.EventArgs)">
+            <summary>
+            Abre o formulário de cadastro de editora.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.BtnRefresh_Click(System.Object,System.EventArgs)">
+            <summary>
+            Atualiza os dados dos combobox de autores e editoras.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.FrmLivraria.components">
+            <summary>
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.Dispose(System.Boolean)">
+            <summary>
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:NovoGEF.FrmLivraria.InitializeComponent">
+            <summary>
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.FrmLogon">
+            <summary>
+            Formulário responsável pelo logon do usuário no sistema.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLogon.#ctor">
+            <summary>
+            Inicializa uma nova instância do formulário de logon.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLogon.Form1_Load(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao carregar o formulário. Define o foco no campo matrícula.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLogon.BtnSair_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário de logon ao clicar no botão Sair.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLogon.BtnConecta_Click(System.Object,System.EventArgs)">
+            <summary>
+            Evento para conectar ao sistema (não implementado).
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLogon.BtnConf_Click(System.Object,System.EventArgs)">
+            <summary>
+            Confirma o logon do usuário, valida credenciais e inicializa sessão.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLogon.BtnCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Cancela o logon e fecha o formulário.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.FrmLogon.components">
+            <summary>
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmLogon.Dispose(System.Boolean)">
+            <summary>
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:NovoGEF.FrmLogon.InitializeComponent">
+            <summary>
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.FrmManterUsuario">
+            <summary>
+            Formulário responsável pelo cadastro, pesquisa e atualização de usuários do sistema.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.#ctor">
+            <summary>
+            Inicializa uma nova instância do formulário de manutenção de usuário.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.FrmManterUsuario_Load(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao carregar o formulário. Verifica se o usuário está logado e inicializa os dados.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.Pesquisar_Geftb001(System.Int32,System.String)">
+            <summary>
+            Pesquisa usuários conforme o id ou matrícula informados.
+            </summary>
+            <param name="id_usuario">Id do usuário para pesquisa.</param>
+            <param name="matricula">Matrícula do usuário para pesquisa.</param>
+            <returns>Retorna "S" se encontrou registros, "N" se não encontrou.</returns>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.IsValidForm">
+            <summary>
+            Realiza validações nos campos do formulário de usuário.
+            </summary>
+            <returns>Retorna 0 se válido, 1 se houver erro.</returns>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.Mostrar_Associado">
+            <summary>
+            Exibe os dados do usuário selecionado no grid.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.FecharFormulárioToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário de manutenção de usuário.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.BtnCadAss_Click(System.Object,System.EventArgs)">
+            <summary>
+            Prepara o formulário para cadastro de novo usuário e realiza a inclusão após validação.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.DgvGeftb001_CellClick_1(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            Evento disparado ao clicar em uma célula do grid de usuários.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.DgvGeftb001_KeyPress_1(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Evento disparado ao pressionar uma tecla no grid de usuários.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.DgvGeftb001_KeyUp_1(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao liberar uma tecla no grid de usuários.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.DgvGeftb001_KeyDown_1(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Evento disparado ao pressionar uma tecla no grid de usuários.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.BtnAtuReg_Click_1(System.Object,System.EventArgs)">
+            <summary>
+            Atualiza os dados do usuário após validação dos campos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.LimpaForm">
+            <summary>
+            Limpa os campos do formulário de usuário.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.BtnSair_Click_1(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário de manutenção de usuário.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.BtnResSenha_Click(System.Object,System.EventArgs)">
+            <summary>
+            Reseta a senha do usuário para o padrão inicial.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.BtnBuscarAss_Click(System.Object,System.EventArgs)">
+            <summary>
+            Abre o formulário de busca de associado e preenche os campos do usuário.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.CbxDtFim_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao alterar o estado do checkbox de data fim.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.FrmManterUsuario.components">
+            <summary>
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.Dispose(System.Boolean)">
+            <summary>
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:NovoGEF.FrmManterUsuario.InitializeComponent">
+            <summary>
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.Geftb007">
+            <summary>
+            Classe responsável pelas operações de acesso e manipulação de dados da tabela geftb007 (grupo de fármacos).
+            </summary>
+        </member>
+        <member name="M:NovoGEF.Geftb007.Search(System.Data.DataTable)">
+            <summary>
+            Busca registros na tabela geftb007.
+            </summary>
+            <param name="dt">DataTable para preenchimento dos dados encontrados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="T:NovoGEF.Geftb001">
+            <summary>
+            Classe responsável pelas operações de acesso e manipulação de dados da tabela de usuários (geftb001).
+            </summary>
+        </member>
+        <member name="M:NovoGEF.Geftb001.Search(System.String,System.String,System.Data.DataTable)">
+            <summary>
+            Realiza a busca de usuário no banco de dados utilizando matrícula e senha.
+            </summary>
+            <param name="matricula">Matrícula do usuário.</param>
+            <param name="senha">Senha do usuário.</param>
+            <param name="dt">DataTable para preenchimento dos dados.</param>
+            <returns>DataTable preenchido com os dados do usuário encontrado.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb001.SearchUsuario(System.Int32,System.String,System.Data.DataTable)">
+            <summary>
+            Busca usuários pelo id ou matrícula.
+            </summary>
+            <param name="id_usuario">Id do usuário.</param>
+            <param name="matricula">Matrícula do usuário.</param>
+            <param name="dt">DataTable para preenchimento dos dados.</param>
+            <returns>DataTable preenchido com os dados dos usuários encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb001.SearchUsuarioNome(System.Data.DataTable)">
+            <summary>
+            Busca todos os usuários pelo nome.
+            </summary>
+            <param name="dt">DataTable para preenchimento dos dados.</param>
+            <returns>DataTable preenchido com os dados dos usuários encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb001.SearchUsuarioNivel(System.Int32,System.Data.DataTable)">
+            <summary>
+            Busca o nível de acesso do usuário pelo id.
+            </summary>
+            <param name="id_usuario">Id do usuário.</param>
+            <param name="dt">DataTable para preenchimento dos dados.</param>
+            <returns>DataTable preenchido com o nível do usuário.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb001.Insert(System.String,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Insere um novo usuário no banco de dados.
+            </summary>
+            <param name="senha">Senha do usuário.</param>
+            <param name="matricula">Matrícula do usuário.</param>
+            <param name="dt2">Data de início.</param>
+            <param name="nivel">Nível de acesso do usuário.</param>
+            <param name="dt4">Data de gravação.</param>
+            <returns>DataTable preenchido com os dados do usuário inserido.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb001.Update(System.Int32,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Atualiza os dados de um usuário no banco de dados.
+            </summary>
+            <param name="id_usuario">Id do usuário.</param>
+            <param name="dt2">Data de início.</param>
+            <param name="dt3">Data de fim.</param>
+            <param name="nivel">Nível de acesso do usuário.</param>
+            <param name="dt4">Data de gravação.</param>
+            <returns>DataTable preenchido com os dados do usuário atualizado.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb001.UpdateSenha(System.String,System.String,System.String)">
+            <summary>
+            Atualiza a senha de um usuário no banco de dados.
+            </summary>
+            <param name="matricula">Matrícula do usuário.</param>
+            <param name="senha">Nova senha do usuário.</param>
+            <param name="dt4">Data de gravação.</param>
+            <returns>DataTable preenchido com os dados do usuário atualizado.</returns>
+        </member>
+        <member name="T:NovoGEF.Geftb002">
+            <summary>
+            Classe responsável pelas operações de acesso e manipulação de dados da tabela de associados (geftb002).
+            </summary>
+        </member>
+        <member name="M:NovoGEF.Geftb002.Search(System.String,System.Int32,System.Int32,System.Data.DataTable)">
+            <summary>
+            Busca associados conforme tipo, classificação e situação.
+            </summary>
+            <param name="tipo">Tipo do associado.</param>
+            <param name="classificacao">Classificação do associado.</param>
+            <param name="situacao">Situação do associado.</param>
+            <param name="dt">DataTable para preenchimento dos dados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb002.SearchMatricula(System.String,System.Int32,System.Int32,System.String,System.Data.DataTable)">
+            <summary>
+            Busca associados pelo número de matrícula.
+            </summary>
+            <param name="tipo">Tipo do associado.</param>
+            <param name="classificacao">Classificação do associado.</param>
+            <param name="situacao">Situação do associado.</param>
+            <param name="matricula">Número da matrícula.</param>
+            <param name="dt">DataTable para preenchimento dos dados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb002.SearchNome(System.String,System.Int32,System.Int32,System.String,System.Data.DataTable)">
+            <summary>
+            Busca associados pelo nome.
+            </summary>
+            <param name="tipo">Tipo do associado.</param>
+            <param name="classificacao">Classificação do associado.</param>
+            <param name="situacao">Situação do associado.</param>
+            <param name="nome">Nome do associado.</param>
+            <param name="dt">DataTable para preenchimento dos dados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb002.SearchIdNome(System.String,System.Data.DataTable)">
+            <summary>
+            Busca associados pelo id e nome.
+            </summary>
+            <param name="tipo">Tipo do associado.</param>
+            <param name="dt">DataTable para preenchimento dos dados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb002.Update(System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Atualiza os dados de um associado no banco de dados.
+            </summary>
+            <param name="idassociado">Id do associado.</param>
+            <param name="nome">Nome do associado.</param>
+            <param name="dtnasc">Data de nascimento.</param>
+            <param name="dtini">Data de início.</param>
+            <param name="dtfim">Data de fim.</param>
+            <param name="cpf">CPF do associado.</param>
+            <param name="tel1">Telefone 1.</param>
+            <param name="tel2">Telefone 2.</param>
+            <param name="email">E-mail do associado.</param>
+            <param name="end">Endereço.</param>
+            <param name="bairro">Bairro.</param>
+            <param name="cidade">Cidade.</param>
+            <param name="cep">CEP.</param>
+            <param name="parentesco">Parentesco.</param>
+            <param name="obs">Observações.</param>
+            <param name="dtgravacao">Data de gravação.</param>
+            <returns>DataTable preenchido com os dados do associado atualizado.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb002.Insert(System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Insere um novo associado no banco de dados.
+            </summary>
+            <param name="titoudep">Tipo ou dependente.</param>
+            <param name="matricula">Matrícula do associado.</param>
+            <param name="nome">Nome do associado.</param>
+            <param name="dtnasc">Data de nascimento.</param>
+            <param name="dtini">Data de início.</param>
+            <param name="cpf">CPF do associado.</param>
+            <param name="tel1">Telefone 1.</param>
+            <param name="tel2">Telefone 2.</param>
+            <param name="email">E-mail do associado.</param>
+            <param name="end">Endereço.</param>
+            <param name="bairro">Bairro.</param>
+            <param name="cidade">Cidade.</param>
+            <param name="cep">CEP.</param>
+            <param name="parentesco">Parentesco.</param>
+            <param name="obs">Observações.</param>
+            <param name="dtgravacao">Data de gravação.</param>
+            <returns>DataTable preenchido com os dados do associado inserido.</returns>
+        </member>
+        <member name="T:NovoGEF.Geftb003">
+            <summary>
+            Classe responsável pelas operações de acesso e manipulação de dados da tabela de atividades (geftb003).
+            </summary>
+        </member>
+        <member name="M:NovoGEF.Geftb003.Search(System.Int32,System.Data.DataTable)">
+            <summary>
+            Busca atividades conforme o status de ativo/inativo.
+            </summary>
+            <param name="ativo">Indica se busca atividades ativas (0) ou inativas (1).</param>
+            <param name="dt">DataTable para preenchimento dos dados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb003.SearchHorario(System.String,System.Data.DataTable)">
+            <summary>
+            Busca horários de atividades pela sigla.
+            </summary>
+            <param name="sigla">Sigla da atividade.</param>
+            <param name="dt">DataTable para preenchimento dos dados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb003.Update(System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Atualiza os dados de uma atividade no banco de dados.
+            </summary>
+            <param name="codigo">Código da atividade.</param>
+            <param name="dtini">Data de início.</param>
+            <param name="dtfim">Data de fim.</param>
+            <param name="sigla">Sigla da atividade.</param>
+            <param name="descricao">Descrição da atividade.</param>
+            <param name="hrini">Hora de início.</param>
+            <param name="hrfim">Hora de fim.</param>
+            <param name="grupo">Grupo da atividade.</param>
+            <param name="subgrupo">Subgrupo da atividade.</param>
+            <param name="diasemana">Dia da semana.</param>
+            <param name="periodo">Período.</param>
+            <param name="dtgravacao">Data de gravação.</param>
+            <returns>DataTable preenchido com os dados da atividade atualizada.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb003.Insert(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Insere uma nova atividade no banco de dados.
+            </summary>
+            <param name="dtini">Data de início.</param>
+            <param name="sigla">Sigla da atividade.</param>
+            <param name="descricao">Descrição da atividade.</param>
+            <param name="hrini">Hora de início.</param>
+            <param name="hrfim">Hora de fim.</param>
+            <param name="grupo">Grupo da atividade.</param>
+            <param name="subgrupo">Subgrupo da atividade.</param>
+            <param name="diasemana">Dia da semana.</param>
+            <param name="periodo">Período.</param>
+            <param name="dtgravacao">Data de gravação.</param>
+            <returns>DataTable preenchido com os dados da atividade inserida.</returns>
+        </member>
+        <member name="T:NovoGEF.Geftb004">
+            <summary>
+            Classe responsável pelas operações de acesso e manipulação de dados da tabela de associação entre associados e atividades (geftb004).
+            </summary>
+        </member>
+        <member name="M:NovoGEF.Geftb004.Search(System.Int32)">
+            <summary>
+            Busca todas as atividades associadas a um associado.
+            </summary>
+            <param name="idassociado">Id do associado.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb004.SearchAssAtv(System.Int32,System.Int32,System.Data.DataTable)">
+            <summary>
+            Busca a associação entre um associado e uma atividade específica.
+            </summary>
+            <param name="idassociado">Id do associado.</param>
+            <param name="atv">Id da atividade.</param>
+            <param name="dt">DataTable para preenchimento dos dados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb004.SearchAssAtvsemAgenda(System.String,System.Data.DataTable)">
+            <summary>
+            Busca associações de atividades sem agenda para um determinado dia da semana.
+            </summary>
+            <param name="diasemana">Dia da semana.</param>
+            <param name="dt">DataTable para preenchimento dos dados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb004.Update(System.Int32,System.String,System.String)">
+            <summary>
+            Atualiza os dados de uma associação entre associado e atividade.
+            </summary>
+            <param name="id">Id da associação.</param>
+            <param name="dtfim">Data de fim da associação.</param>
+            <param name="dtgravacao">Data de gravação da alteração.</param>
+            <returns>DataTable preenchido com os dados atualizados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb004.Insert(System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Insere uma nova associação entre associado e atividade.
+            </summary>
+            <param name="idassociado">Id do associado.</param>
+            <param name="atv">Id da atividade.</param>
+            <param name="dtini">Data de início da associação.</param>
+            <param name="dtfim">Data de fim da associação.</param>
+            <param name="dtgravacao">Data de gravação da inclusão.</param>
+            <returns>DataTable preenchido com os dados inseridos.</returns>
+        </member>
+        <member name="T:NovoGEF.Geftb005">
+            <summary>
+            Classe responsável pelas operações de acesso e manipulação de dados da tabela de agenda de atividades (geftb005).
+            </summary>
+        </member>
+        <member name="M:NovoGEF.Geftb005.Search(System.String,System.Data.DataTable)">
+            <summary>
+            Busca registros de agenda pela data informada.
+            </summary>
+            <param name="DtAgenda">Data da agenda.</param>
+            <param name="dt">DataTable para preenchimento dos dados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb005.SearchAssAgenda(System.Data.DataTable)">
+            <summary>
+            Busca registros de associados vinculados à agenda.
+            </summary>
+            <param name="dt">DataTable para preenchimento dos dados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb005.SearchDtsAgenda(System.Int32,System.Data.DataTable)">
+            <summary>
+            Busca datas de agenda para uma atividade específica.
+            </summary>
+            <param name="id_atividade">Id da atividade.</param>
+            <param name="dt">DataTable para preenchimento dos dados.</param>
+            <returns>DataTable preenchido com as datas encontradas.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb005.SearchRecBolsa(System.String,System.Data.DataTable)">
+            <summary>
+            Busca registros de recebimento de bolsa pela data da agenda.
+            </summary>
+            <param name="DtAgenda">Data da agenda.</param>
+            <param name="dt">DataTable para preenchimento dos dados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb005.SearchPresAtv(System.String,System.Int32,System.Data.DataTable)">
+            <summary>
+            Busca registros de presença em atividade para uma data e atividade específica.
+            </summary>
+            <param name="DtAgenda">Data da agenda.</param>
+            <param name="idatividade">Id da atividade.</param>
+            <param name="dt">DataTable para preenchimento dos dados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb005.SearchAgendaAtv(System.String,System.Data.DataTable)">
+            <summary>
+            Busca atividades agendadas para uma data específica.
+            </summary>
+            <param name="DtAgenda">Data da agenda.</param>
+            <param name="dt">DataTable para preenchimento dos dados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb005.Update(System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Atualiza os dados de presença e informações de agenda de um associado.
+            </summary>
+            <param name="dtagenda">Data da agenda.</param>
+            <param name="sigla">Sigla da atividade.</param>
+            <param name="idassociado">Id do associado.</param>
+            <param name="presenca">Presença do associado.</param>
+            <param name="hrent">Hora de entrada.</param>
+            <param name="vestuario">Vestuário utilizado.</param>
+            <param name="justificativa">Justificativa de ausência/presença.</param>
+            <param name="dtgravacao">Data de gravação da alteração.</param>
+            <returns>DataTable preenchido com os dados atualizados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb005.Insert(System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Insere um novo registro de agenda.
+            </summary>
+            <param name="numsemana">Número da semana.</param>
+            <param name="nomediasemana">Nome do dia da semana.</param>
+            <param name="DtAgenda">Data da agenda.</param>
+            <param name="dtgravacao">Data de gravação da inclusão.</param>
+            <returns>DataTable preenchido com os dados inseridos.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb005.InsertAssociadoAgenda(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            Insere um novo associado na agenda de uma atividade.
+            </summary>
+            <param name="dtAgenda">Data da agenda.</param>
+            <param name="id_associado">Id do associado.</param>
+            <param name="id_atividade">Id da atividade.</param>
+            <param name="dtgravacao">Data de gravação da inclusão.</param>
+            <returns>DataTable preenchido com os dados inseridos.</returns>
+        </member>
+        <member name="T:NovoGEF.Geftb006">
+            <summary>
+            Classe responsável pelas operações de acesso e manipulação de dados da tabela geftb006.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.Geftb006.Search(System.Data.DataTable)">
+            <summary>
+            Busca registros na tabela geftb006.
+            </summary>
+            <param name="dt">DataTable para preenchimento dos dados encontrados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="T:NovoGEF.Geftb008">
+            <summary>
+            Classe responsável pelas operações de acesso e manipulação de dados da tabela de estoque de medicamentos (geftb008).
+            </summary>
+        </member>
+        <member name="M:NovoGEF.Geftb008.Search(System.Data.DataTable)">
+            <summary>
+            Busca registros de estoque de medicamentos.
+            </summary>
+            <param name="dt">DataTable para preenchimento dos dados encontrados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb008.SearchRecBolsa(System.Data.DataTable)">
+            <summary>
+            Busca registros de recebimento de bolsa (utiliza a mesma procedure de busca de estoque).
+            </summary>
+            <param name="dt">DataTable para preenchimento dos dados encontrados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb008.Update(System.Int32,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Atualiza os dados de um medicamento no estoque.
+            </summary>
+            <param name="idestoquemed">Id do estoque do medicamento.</param>
+            <param name="nomecom">Nome comercial do medicamento.</param>
+            <param name="nomequi">Nome químico do medicamento.</param>
+            <param name="lote">Número do lote.</param>
+            <param name="prateleira">Número da prateleira.</param>
+            <param name="estoque">Quantidade em estoque.</param>
+            <param name="grfarmaco">Id do grupo de fármaco.</param>
+            <param name="dtvalidade">Data de validade.</param>
+            <param name="dtgravacao">Data de gravação da alteração.</param>
+            <returns>DataTable preenchido com os dados atualizados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb008.Insert(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Insere um novo medicamento no estoque.
+            </summary>
+            <param name="nomecom">Nome comercial do medicamento.</param>
+            <param name="nomequi">Nome químico do medicamento.</param>
+            <param name="lote">Número do lote.</param>
+            <param name="prateleira">Número da prateleira.</param>
+            <param name="estoque">Quantidade em estoque.</param>
+            <param name="grfarmaco">Id do grupo de fármaco.</param>
+            <param name="dtvalidade">Data de validade.</param>
+            <param name="dtgravacao">Data de gravação da inclusão.</param>
+            <returns>DataTable preenchido com os dados inseridos.</returns>
+        </member>
+        <member name="T:NovoGEF.Geftb009">
+            <summary>
+            Classe responsável pelas operações de acesso e manipulação de dados da tabela de autores espirituais (geftb009).
+            </summary>
+        </member>
+        <member name="M:NovoGEF.Geftb009.Search(System.Data.DataTable)">
+            <summary>
+            Busca todos os registros de autores espirituais.
+            </summary>
+            <param name="dt">DataTable para preenchimento dos dados encontrados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb009.SearchNome(System.String,System.Data.DataTable)">
+            <summary>
+            Busca registros de autores espirituais pelo nome.
+            </summary>
+            <param name="nomeautesp">Nome do autor espiritual.</param>
+            <param name="dt">DataTable para preenchimento dos dados encontrados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb009.Update(System.Int32,System.String,System.String)">
+            <summary>
+            Atualiza os dados de um autor espiritual.
+            </summary>
+            <param name="idautesp">Id do autor espiritual.</param>
+            <param name="nomeautesp">Nome do autor espiritual.</param>
+            <param name="dtgravacao">Data de gravação da alteração.</param>
+            <returns>DataTable preenchido com os dados atualizados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb009.Insert(System.String,System.String)">
+            <summary>
+            Insere um novo autor espiritual.
+            </summary>
+            <param name="nomeautesp">Nome do autor espiritual.</param>
+            <param name="dtgravacao">Data de gravação da inclusão.</param>
+            <returns>DataTable preenchido com os dados inseridos.</returns>
+        </member>
+        <member name="T:NovoGEF.Geftb010">
+            <summary>
+            Classe responsável pelas operações de acesso e manipulação de dados da tabela de autores (geftb010).
+            </summary>
+        </member>
+        <member name="M:NovoGEF.Geftb010.Search(System.Data.DataTable)">
+            <summary>
+            Busca todos os registros de autores.
+            </summary>
+            <param name="dt">DataTable para preenchimento dos dados encontrados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb010.SearchNome(System.String,System.Data.DataTable)">
+            <summary>
+            Busca registros de autores pelo nome.
+            </summary>
+            <param name="nomeautor">Nome do autor.</param>
+            <param name="dt">DataTable para preenchimento dos dados encontrados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb010.Update(System.Int32,System.String,System.String)">
+            <summary>
+            Atualiza os dados de um autor.
+            </summary>
+            <param name="idautor">Id do autor.</param>
+            <param name="nomeautor">Nome do autor.</param>
+            <param name="dtgravacao">Data de gravação da alteração.</param>
+            <returns>DataTable preenchido com os dados atualizados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb010.Insert(System.String,System.String)">
+            <summary>
+            Insere um novo autor.
+            </summary>
+            <param name="nomeautor">Nome do autor.</param>
+            <param name="dtgravacao">Data de gravação da inclusão.</param>
+            <returns>DataTable preenchido com os dados inseridos.</returns>
+        </member>
+        <member name="T:NovoGEF.Geftb011">
+            <summary>
+            Classe responsável pelas operações de acesso e manipulação de dados da tabela de editoras (geftb011).
+            </summary>
+        </member>
+        <member name="M:NovoGEF.Geftb011.Search(System.Data.DataTable)">
+            <summary>
+            Busca todos os registros de editoras.
+            </summary>
+            <param name="dt">DataTable para preenchimento dos dados encontrados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb011.SearchNomeCnpj(System.String,System.String,System.Data.DataTable)">
+            <summary>
+            Busca registros de editoras pelo nome e CNPJ.
+            </summary>
+            <param name="descricao">Nome da editora.</param>
+            <param name="cnpj">CNPJ da editora.</param>
+            <param name="dt">DataTable para preenchimento dos dados encontrados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb011.Update(System.Int32,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Atualiza os dados de uma editora.
+            </summary>
+            <param name="ideditora">Id da editora.</param>
+            <param name="descricao">Nome da editora.</param>
+            <param name="cnpj">CNPJ da editora.</param>
+            <param name="tel1">Telefone 1.</param>
+            <param name="tel2">Telefone 2.</param>
+            <param name="email">E-mail da editora.</param>
+            <param name="dtgravacao">Data de gravação da alteração.</param>
+            <returns>DataTable preenchido com os dados atualizados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb011.Insert(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Insere uma nova editora.
+            </summary>
+            <param name="descricao">Nome da editora.</param>
+            <param name="cnpj">CNPJ da editora.</param>
+            <param name="tel1">Telefone 1.</param>
+            <param name="tel2">Telefone 2.</param>
+            <param name="email">E-mail da editora.</param>
+            <param name="dtgravacao">Data de gravação da inclusão.</param>
+            <returns>DataTable preenchido com os dados inseridos.</returns>
+        </member>
+        <member name="T:NovoGEF.Geftb012">
+            <summary>
+            Classe responsável pelas operações de acesso e manipulação de dados da tabela de livros da livraria (geftb012).
+            </summary>
+        </member>
+        <member name="M:NovoGEF.Geftb012.Search(System.Data.DataTable)">
+            <summary>
+            Busca todos os registros de livros da livraria.
+            </summary>
+            <param name="dt">DataTable para preenchimento dos dados encontrados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb012.SearchCodigo(System.Int32,System.Data.DataTable)">
+            <summary>
+            Busca registros de livros pelo código.
+            </summary>
+            <param name="codigo">Código do livro.</param>
+            <param name="dt">DataTable para preenchimento dos dados encontrados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb012.SearchTitulo(System.String,System.Data.DataTable)">
+            <summary>
+            Busca registros de livros pelo título.
+            </summary>
+            <param name="titulo">Título do livro.</param>
+            <param name="dt">DataTable para preenchimento dos dados encontrados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb012.SearchAssunto(System.String,System.Data.DataTable)">
+            <summary>
+            Busca registros de livros pelo assunto.
+            </summary>
+            <param name="assunto">Assunto do livro.</param>
+            <param name="dt">DataTable para preenchimento dos dados encontrados.</param>
+            <returns>DataTable preenchido com os dados encontrados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb012.Update(System.Int32,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.Decimal,System.Decimal,System.String)">
+            <summary>
+            Atualiza os dados de um livro da livraria.
+            </summary>
+            <param name="idlivraria">Id do livro.</param>
+            <param name="titulo">Título do livro.</param>
+            <param name="assunto">Assunto do livro.</param>
+            <param name="autor">Id do autor.</param>
+            <param name="autoresp">Id do autor espiritual.</param>
+            <param name="editora">Id da editora.</param>
+            <param name="estoque">Quantidade em estoque.</param>
+            <param name="vlunitario">Valor unitário.</param>
+            <param name="vllivraria">Valor para livraria.</param>
+            <param name="vlfeira">Valor para feira.</param>
+            <param name="dtgravacao">Data de gravação da alteração.</param>
+            <returns>DataTable preenchido com os dados atualizados.</returns>
+        </member>
+        <member name="M:NovoGEF.Geftb012.Insert(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.Decimal,System.Decimal,System.String)">
+            <summary>
+            Insere um novo livro na livraria.
+            </summary>
+            <param name="titulo">Título do livro.</param>
+            <param name="assunto">Assunto do livro.</param>
+            <param name="autor">Id do autor.</param>
+            <param name="autoresp">Id do autor espiritual.</param>
+            <param name="editora">Id da editora.</param>
+            <param name="estoque">Quantidade em estoque.</param>
+            <param name="vlunitario">Valor unitário.</param>
+            <param name="vllivraria">Valor para livraria.</param>
+            <param name="vlfeira">Valor para feira.</param>
+            <param name="dtgravacao">Data de gravação da inclusão.</param>
+            <returns>DataTable preenchido com os dados inseridos.</returns>
+        </member>
+        <member name="T:NovoGEF.Models.Agenda">
+            <summary>
+            Representa uma agenda de atividades para um associado.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Agenda.Id_Agenda">
+            <summary>
+            Identificador único da agenda.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Agenda.Dt_Agenda">
+            <summary>
+            Data da agenda.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Agenda.Geftb002_Id_Associado">
+            <summary>
+            Identificador do associado relacionado à agenda.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Agenda.Geftb003_Id_Atividade">
+            <summary>
+            Identificador da atividade relacionada à agenda.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Agenda.Presenca">
+            <summary>
+            Indica a presença do associado.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Agenda.Hr_Entrada">
+            <summary>
+            Horário de entrada do associado.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Agenda.Vestuario">
+            <summary>
+            Informações sobre o vestuário do associado.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Agenda.Justificativa">
+            <summary>
+            Justificativa para ausência ou outra situação.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Agenda.Geftb001_Id_Usuario">
+            <summary>
+            Identificador do usuário que gravou a agenda.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Agenda.Dt_Gravacao">
+            <summary>
+            Data de gravação da agenda.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.Models.Associado">
+            <summary>
+            Representa um associado do sistema, contendo informações pessoais e de vínculo.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Associado.Id_Associado">
+            <summary>
+            Identificador único do associado.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Associado.Matricula">
+            <summary>
+            Matrícula do associado.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Associado.Nome">
+            <summary>
+            Nome completo do associado.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Associado.Dt_Nascimento">
+            <summary>
+            Data de nascimento do associado.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Associado.Dt_Ini">
+            <summary>
+            Data de início do vínculo do associado.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Associado.Dt_Fim">
+            <summary>
+            Data de término do vínculo do associado.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Associado.Cpf">
+            <summary>
+            CPF do associado.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Associado.Email">
+            <summary>
+            E-mail do associado.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Associado.Endereco">
+            <summary>
+            Endereço do associado.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Associado.Bairro">
+            <summary>
+            Bairro do associado.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Associado.Cidade">
+            <summary>
+            Cidade do associado.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Associado.Cep">
+            <summary>
+            CEP do associado.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Associado.Parentesco">
+            <summary>
+            Grau de parentesco, se aplicável.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Associado.Obs">
+            <summary>
+            Observações adicionais sobre o associado.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Associado.Geftb001_Id_Usuario">
+            <summary>
+            Identificador do usuário responsável pelo cadastro.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Associado.Dt_Gravacao">
+            <summary>
+            Data de gravação do registro.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.Models.AssxAtv">
+            <summary>
+            Representa a associação entre um associado e uma atividade, incluindo datas de início e fim, usuário responsável e data de gravação.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.AssxAtv.Id_AssXAtv">
+            <summary>
+            Identificador da associação entre associado e atividade.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.AssxAtv.Geftb002_Id_Associado">
+            <summary>
+            Identificador do associado.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.AssxAtv.Geftb003_Id_Atividade">
+            <summary>
+            Identificador da atividade.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.AssxAtv.Dt_Ini">
+            <summary>
+            Data de início da associação.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.AssxAtv.Dt_Fim">
+            <summary>
+            Data de término da associação.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.AssxAtv.Geftb001_Id_Usuario">
+            <summary>
+            Identificador do usuário responsável pela gravação.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.AssxAtv.Dt_Gravacao">
+            <summary>
+            Data de gravação da associação.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.Models.Atividade">
+            <summary>
+            Representa uma atividade registrada no sistema, incluindo informações de identificação, horários, datas, grupo, subgrupo, usuário e período.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Atividade.Id_Atividade">
+            <summary>
+            Identificador único da atividade.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Atividade.Sigla">
+            <summary>
+            Sigla da atividade.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Atividade.Descricao">
+            <summary>
+            Descrição detalhada da atividade.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Atividade.Grupo">
+            <summary>
+            Grupo ao qual a atividade pertence.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Atividade.SubGrupo">
+            <summary>
+            Subgrupo ao qual a atividade pertence.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Atividade.Hr_Ini">
+            <summary>
+            Horário de início da atividade.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Atividade.Hr_Fim">
+            <summary>
+            Horário de término da atividade.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Atividade.Dt_Ini">
+            <summary>
+            Data de início da atividade.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Atividade.Dt_Fim">
+            <summary>
+            Data de término da atividade.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Atividade.DiaSemana">
+            <summary>
+            Dia da semana em que a atividade ocorre.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Atividade.Periodo">
+            <summary>
+            Período da atividade.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Atividade.Geftb001_Id_Usuario">
+            <summary>
+            Identificador do usuário relacionado à atividade.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Models.Atividade.Dt_Gravacao">
+            <summary>
+            Data de gravação da atividade.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.RelPDF_TabAtividade">
+            <summary>
+            Classe responsável pela geração de relatórios PDF da tabela de atividades.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.RelPDF_TabAtividade.GerarRelatorioPDF(System.Data.DataTable)">
+            <summary>
+            Gera o relatório PDF da tabela de atividades a partir de um DataTable.
+            </summary>
+            <param name="dt">DataTable contendo os dados das atividades.</param>
+        </member>
+        <member name="M:NovoGEF.RelPDF_TabAtividade.CriarCelulaTexto(System.Int32,iTextSharp.text.pdf.PdfPTable,System.String,System.Int32,System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Cria uma célula de texto para a tabela do PDF.
+            </summary>
+            <param name="i">Índice da linha.</param>
+            <param name="tabela">Tabela do PDF.</param>
+            <param name="texto">Texto da célula.</param>
+            <param name="alinhamento">Alinhamento do texto.</param>
+            <param name="negrito">Define se o texto será negrito.</param>
+            <param name="italico">Define se o texto será itálico.</param>
+            <param name="tamanhoFonte">Tamanho da fonte.</param>
+            <param name="alturaCelula">Altura da célula.</param>
+        </member>
+        <member name="M:NovoGEF.RelPDF_TabAtividade.criarCelulaImagem(iTextSharp.text.pdf.PdfPTable,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Cria uma célula de imagem para a tabela do PDF.
+            </summary>
+            <param name="tabela">Tabela do PDF.</param>
+            <param name="caminhoImagem">Caminho da imagem.</param>
+            <param name="larguraImagem">Largura da imagem.</param>
+            <param name="alturaImagem">Altura da imagem.</param>
+            <param name="alturaCelula">Altura da célula.</param>
+        </member>
+        <member name="T:NovoGEF.RelPDF_TabAtividade.RodapeRelatorioPDF">
+            <summary>
+            Classe responsável por adicionar rodapé e cabeçalho ao relatório PDF.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.RelPDF_TabAtividade.RodapeRelatorioPDF.#ctor(System.Int32)">
+            <summary>
+            Inicializa o rodapé do relatório PDF.
+            </summary>
+            <param name="totalPaginas">Total de páginas do relatório.</param>
+        </member>
+        <member name="M:NovoGEF.RelPDF_TabAtividade.RodapeRelatorioPDF.OnOpenDocument(iTextSharp.text.pdf.PdfWriter,iTextSharp.text.Document)">
+            <summary>
+            Evento disparado ao abrir o documento PDF.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.RelPDF_TabAtividade.RodapeRelatorioPDF.OnEndPage(iTextSharp.text.pdf.PdfWriter,iTextSharp.text.Document)">
+            <summary>
+            Evento disparado ao finalizar uma página do PDF.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.RelPDF_TabAtividade.RodapeRelatorioPDF.AdicionarMomentoDaGeracao(iTextSharp.text.pdf.PdfWriter,iTextSharp.text.Document)">
+            <summary>
+            Adiciona a data e hora de geração do relatório no rodapé.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.RelPDF_TabAtividade.RodapeRelatorioPDF.AdicionarNumeroPaginaAtual(iTextSharp.text.pdf.PdfWriter,iTextSharp.text.Document)">
+            <summary>
+            Adiciona o número da página atual no rodapé.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.RelPDF_PresAtividade">
+            <summary>
+            Classe responsável pela geração de relatórios PDF de presença em atividades.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.RelPDF_PresAtividade.GerarRelatorioPDF(System.Data.DataTable)">
+            <summary>
+            Gera o relatório PDF de presença a partir de um DataTable.
+            </summary>
+            <param name="dt">DataTable contendo os dados de presença.</param>
+        </member>
+        <member name="M:NovoGEF.RelPDF_PresAtividade.CriarCelulaTexto(System.Int32,iTextSharp.text.pdf.PdfPTable,System.String,System.Int32,System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Cria uma célula de texto para a tabela do PDF.
+            </summary>
+            <param name="i">Índice da linha.</param>
+            <param name="tabela">Tabela do PDF.</param>
+            <param name="texto">Texto da célula.</param>
+            <param name="alinhamento">Alinhamento do texto.</param>
+            <param name="negrito">Define se o texto será negrito.</param>
+            <param name="italico">Define se o texto será itálico.</param>
+            <param name="tamanhoFonte">Tamanho da fonte.</param>
+            <param name="alturaCelula">Altura da célula.</param>
+        </member>
+        <member name="M:NovoGEF.RelPDF_PresAtividade.criarCelulaImagem(iTextSharp.text.pdf.PdfPTable,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Cria uma célula de imagem para a tabela do PDF.
+            </summary>
+            <param name="tabela">Tabela do PDF.</param>
+            <param name="caminhoImagem">Caminho da imagem.</param>
+            <param name="larguraImagem">Largura da imagem.</param>
+            <param name="alturaImagem">Altura da imagem.</param>
+            <param name="alturaCelula">Altura da célula.</param>
+        </member>
+        <member name="T:NovoGEF.RelPDF_PresAtividade.RodapeRelatorioPDF">
+            <summary>
+            Classe responsável por adicionar rodapé e cabeçalho ao relatório PDF.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.RelPDF_PresAtividade.RodapeRelatorioPDF.#ctor(System.Int32)">
+            <summary>
+            Inicializa o rodapé do relatório PDF.
+            </summary>
+            <param name="totalPaginas">Total de páginas do relatório.</param>
+        </member>
+        <member name="M:NovoGEF.RelPDF_PresAtividade.RodapeRelatorioPDF.OnOpenDocument(iTextSharp.text.pdf.PdfWriter,iTextSharp.text.Document)">
+            <summary>
+            Evento disparado ao abrir o documento PDF.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.RelPDF_PresAtividade.RodapeRelatorioPDF.OnEndPage(iTextSharp.text.pdf.PdfWriter,iTextSharp.text.Document)">
+            <summary>
+            Evento disparado ao finalizar uma página do PDF.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.RelPDF_PresAtividade.RodapeRelatorioPDF.AdicionarMomentoDaGeracao(iTextSharp.text.pdf.PdfWriter,iTextSharp.text.Document)">
+            <summary>
+            Adiciona a data e hora de geração do relatório no rodapé.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.RelPDF_PresAtividade.RodapeRelatorioPDF.AdicionarNumeroPaginaAtual(iTextSharp.text.pdf.PdfWriter,iTextSharp.text.Document)">
+            <summary>
+            Adiciona o número da página atual no rodapé.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.RelPDF_RecBolsa">
+            <summary>
+            Classe responsável pela geração de relatórios PDF de recebimento de bolsa.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.RelPDF_RecBolsa.GerarRelatorioPDF(System.Data.DataTable)">
+            <summary>
+            Gera o relatório PDF de recebimento de bolsa a partir de um DataTable.
+            </summary>
+            <param name="dt">DataTable contendo os dados do relatório.</param>
+        </member>
+        <member name="M:NovoGEF.RelPDF_RecBolsa.CriarCelulaTexto(System.Int32,iTextSharp.text.pdf.PdfPTable,System.String,System.Int32,System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Cria uma célula de texto para a tabela do PDF.
+            </summary>
+            <param name="i">Índice da linha.</param>
+            <param name="tabela">Tabela do PDF.</param>
+            <param name="texto">Texto da célula.</param>
+            <param name="alinhamento">Alinhamento do texto.</param>
+            <param name="negrito">Define se o texto será negrito.</param>
+            <param name="italico">Define se o texto será itálico.</param>
+            <param name="tamanhoFonte">Tamanho da fonte.</param>
+            <param name="alturaCelula">Altura da célula.</param>
+        </member>
+        <member name="M:NovoGEF.RelPDF_RecBolsa.criarCelulaImagem(iTextSharp.text.pdf.PdfPTable,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Cria uma célula de imagem para a tabela do PDF.
+            </summary>
+            <param name="tabela">Tabela do PDF.</param>
+            <param name="caminhoImagem">Caminho da imagem.</param>
+            <param name="larguraImagem">Largura da imagem.</param>
+            <param name="alturaImagem">Altura da imagem.</param>
+            <param name="alturaCelula">Altura da célula.</param>
+        </member>
+        <member name="T:NovoGEF.RelPDF_RecBolsa.RodapeRelatorioPDF">
+            <summary>
+            Classe responsável por adicionar rodapé e cabeçalho ao relatório PDF.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.RelPDF_RecBolsa.RodapeRelatorioPDF.#ctor(System.Int32)">
+            <summary>
+            Inicializa o rodapé do relatório PDF.
+            </summary>
+            <param name="totalPaginas">Total de páginas do relatório.</param>
+        </member>
+        <member name="M:NovoGEF.RelPDF_RecBolsa.RodapeRelatorioPDF.OnOpenDocument(iTextSharp.text.pdf.PdfWriter,iTextSharp.text.Document)">
+            <summary>
+            Evento disparado ao abrir o documento PDF.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.RelPDF_RecBolsa.RodapeRelatorioPDF.OnEndPage(iTextSharp.text.pdf.PdfWriter,iTextSharp.text.Document)">
+            <summary>
+            Evento disparado ao finalizar uma página do PDF.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.RelPDF_RecBolsa.RodapeRelatorioPDF.AdicionarMomentoDaGeracao(iTextSharp.text.pdf.PdfWriter,iTextSharp.text.Document)">
+            <summary>
+            Adiciona a data e hora de geração do relatório no rodapé.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.RelPDF_RecBolsa.RodapeRelatorioPDF.AdicionarNumeroPaginaAtual(iTextSharp.text.pdf.PdfWriter,iTextSharp.text.Document)">
+            <summary>
+            Adiciona o número da página atual no rodapé.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.FrmPrincipal">
+            <summary>
+            Formulário principal do sistema, responsável pela navegação entre módulos e gerenciamento de janelas MDI.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.#ctor">
+            <summary>
+            Inicializa uma nova instância do formulário principal.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.ShowNewForm(System.Windows.Forms.Form)">
+            <summary>
+            Exibe um novo formulário filho, fechando o anterior se necessário.
+            </summary>
+            <param name="frm">Formulário a ser exibido.</param>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.ActiveFormClose">
+            <summary>
+            Fecha o formulário filho ativo, se houver.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.OpenFile(System.Object,System.EventArgs)">
+            <summary>
+            Abre um arquivo de texto usando o diálogo padrão do Windows.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.SaveAsToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Salva um arquivo de texto usando o diálogo padrão do Windows.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.ExitToolsStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário principal.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.CascadeToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Organiza as janelas MDI em cascata.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.TileVerticalToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Organiza as janelas MDI verticalmente.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.TileHorizontalToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Organiza as janelas MDI horizontalmente.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.ArrangeIconsToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Organiza os ícones das janelas MDI.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.CloseAllToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fecha todos os formulários filhos abertos.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.LoginToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Abre o formulário de logon.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.CadastroDeAssociadosToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Abre o formulário de cadastro de associados, se o usuário tiver permissão.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.AtividadesDoAssociadoToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Abre o formulário de atividades do associado, se o usuário tiver permissão.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.AgendaToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Abre o formulário de agenda, se o usuário tiver permissão.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.TabelaDeAtividadesToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Abre o formulário de tabela de atividades, se o usuário tiver permissão.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.TabelaUsuarioToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Abre o formulário de tabela de usuários, se o usuário tiver permissão.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.TabelaDeAutorToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Abre o formulário de tabela de autores, se o usuário tiver permissão.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.TabelaDeAutorEspiritualToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Abre o formulário de tabela de autores espirituais, se o usuário tiver permissão.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.TabelaDeEditoraToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Abre o formulário de tabela de editoras, se o usuário tiver permissão.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.LivrariaToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Abre o formulário de livraria, se o usuário tiver permissão.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.SairToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fecha o formulário principal ao clicar em "Sair".
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.FrmPrincipal_Load(System.Object,System.EventArgs)">
+            <summary>
+            Evento disparado ao carregar o formulário principal.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.PanelForm_Paint(System.Object,System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Evento disparado ao pintar o painel de formulários.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.FrmPrincipal.components">
+            <summary>
+            Variável de designer necessária.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.Dispose(System.Boolean)">
+            <summary>
+            Limpar os recursos que estão sendo usados.
+            </summary>
+            <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        </member>
+        <member name="M:NovoGEF.FrmPrincipal.InitializeComponent">
+            <summary>
+            Método necessário para suporte ao Designer - não modifique 
+            o conteúdo deste método com o editor de código.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.ParmGlobal">
+            <summary>
+            Classe que armazena variáveis globais utilizadas em todo o sistema NovoGEF.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.ParmGlobal.titoudep">
+            <summary>
+            Identificador de tipo ou dependente.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.ParmGlobal.classificacao">
+            <summary>
+            Classificação do associado ou usuário.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.ParmGlobal.situacao">
+            <summary>
+            Situação do associado ou usuário.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.ParmGlobal.usuarioId">
+            <summary>
+            Identificador do usuário logado.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.ParmGlobal.idassociado">
+            <summary>
+            Identificador do associado.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.ParmGlobal.privez">
+            <summary>
+            Indica se é a primeira vez de acesso.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.ParmGlobal.nivel">
+            <summary>
+            Nível de acesso do usuário.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.ParmGlobal.tipo">
+            <summary>
+            Tipo do associado ou usuário.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.ParmGlobal.usuarioNome">
+            <summary>
+            Nome do usuário logado.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.ParmGlobal.Titulo">
+            <summary>
+            Título do relatório ou tela.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.ParmGlobal.nomeArquivo">
+            <summary>
+            Nome do arquivo gerado para relatórios.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.ParmGlobal.caminho">
+            <summary>
+            Caminho base do diretório do aplicativo.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.ParmGlobal.caminhoLogo">
+            <summary>
+            Caminho do arquivo de logo utilizado nos relatórios.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.ParmGlobal.domingo">
+            <summary>
+            Array de informações relacionadas ao domingo.
+            </summary>
+        </member>
+        <member name="F:NovoGEF.ParmGlobal.dados_associado">
+            <summary>
+            Array de dados do associado selecionado.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.Program">
+            <summary>
+            Classe principal responsável pelo ponto de entrada do aplicativo NovoGEF.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.Program.Main">
+            <summary>
+            Ponto de entrada principal para o aplicativo.
+            Inicializa as configurações visuais e executa o formulário principal.
+            </summary>
+        </member>
+        <member name="T:NovoGEF.Util.ValidadorAssociado">
+            <summary>
+            Classe utilitária para validação de dados de associados, como e-mail e CPF.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.Util.ValidadorAssociado.ValidarEmail(System.String)">
+            <summary>
+            Valida o e-mail informado.
+            </summary>
+            <param name="email">E-mail a ser validado.</param>
+            <returns>Retorna true se válido, false se inválido.</returns>
+        </member>
+        <member name="M:NovoGEF.Util.ValidadorAssociado.ValidarCPF(System.String)">
+            <summary>
+            Valida o CPF informado no campo do formulário.
+            </summary>
+            <param name="cpf">CPF a ser validado.</param>
+            <returns>Retorna true se válido, false se inválido.</returns>
+        </member>
+        <member name="T:NovoGEF.Util.ValidadorEditora">
+            <summary>
+            Fornece métodos para validação de dados relacionados à Editora.
+            </summary>
+        </member>
+        <member name="M:NovoGEF.Util.ValidadorEditora.ValidarCNPJ(System.String)">
+            <summary>
+            Valida se o CNPJ informado é válido conforme as regras de cálculo dos dígitos verificadores.
+            </summary>
+            <param name="cnpj">CNPJ a ser validado.</param>
+            <returns>True se o CNPJ for válido; caso contrário, false.</returns>
+        </member>
+        <member name="T:NovoGEF.Properties.Resources">
+            <summary>
+              Uma classe de recurso de tipo de alta segurança, para pesquisar cadeias de caracteres localizadas etc.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Properties.Resources.ResourceManager">
+            <summary>
+              Retorna a instância de ResourceManager armazenada em cache usada por essa classe.
+            </summary>
+        </member>
+        <member name="P:NovoGEF.Properties.Resources.Culture">
+            <summary>
+              Substitui a propriedade CurrentUICulture do thread atual para todas as
+              pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
+            </summary>
+        </member>
+    </members>
+</doc>
