@@ -389,7 +389,6 @@ namespace NovoGEF.Forms
             _atividade.Sigla = tbSigla.Text;
             _atividade.Descricao = tbDescricao.Text;
             _atividade.Dt_Ini = DtpInicio.Value.ToString("yyyy/MM/dd");
-            _atividade.Dt_Fim = null;
             _atividade.Dt_Ini = mskHoraini.text;
             _atividade.Hr_Fim = mskHorafim.text;
             string gr, sgr;
@@ -414,6 +413,7 @@ namespace NovoGEF.Forms
                                                 MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
+                    _atividade.Dt_Fim = DtpFim.Value.ToString("yyyy/MM/dd");
                     var result = _atividade.Update();
                     if (result == "ok")
                        MessageBox.Show("Atividade atualizada com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -426,69 +426,27 @@ namespace NovoGEF.Forms
                                                 MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
+                    _atividade.Dt_Fim = null;
                     var result = _atividade.Update();
                     if (result == "ok")
                         MessageBox.Show("Atividade atualizada com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-            }else
-            {
-                var result = _atividade.Update();
-                if (result == "ok")
-                    MessageBox.Show("Atividade atualizado com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            var result = _atividade.Update();
-            if (result == "ok")
-            {
-
-                bool ativado = false;
-                if (TbDtFim.Text == "")
-                {
-                    ativado = true;
-                }
-                string dt2 = DtpInicio.Value.ToString("yyyy/MM/dd");
-                string dt3 = null;
-                string dt4 = DateTime.Now.ToString("yyyy/MM/dd");
-                if (CbxDtFim.Checked == true && ativado == true)
-                {
-                    var result = MessageBox.Show("Quer realmente desativar essa atividade?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
-                    {
-                        dt3 = DtpFim.Value.ToString("yyyy/MM/dd");
-                    }
-                }
-                else if (CbxDtFim.Checked == false && ativado == false)
-                {
-                    var result = MessageBox.Show("Quer realmente reativar essa aatividade?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
-                    {
-                        dt3 = null;
-                    }
-                }
-                else if (CbxDtFim.Checked == false && ativado == true)
-                {
-                    dt3 = null;
-                }
-                string hi = mskHoraini.Text;
-                hi = hi.Substring(0, 2) + ":" + hi.Substring(2, 2);
-                string hf = mskHorafim.Text;
-                hf = hf.Substring(0, 2) + ":" + hf.Substring(2, 2);
-                var geftb003 = new Geftb003();
-                geftb003.Update(Convert.ToInt32(tbCodigo.Text), dt2, dt3, tbSigla.Text, tbDescricao.Text,
-                hi, hf, gr, sgr, cbDiasemana.Text, cbPeriodo.Text, dt4);
-                MessageBox.Show("Atividade atualizada com sucesso.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                BtnCadastrar.Visible = true;
-                BtnLimpForm.Visible = true;
-                BtnAtuReg.Visible = true;
-                BtnSair.Visible = true;
-                BtnImpTabAtv.Visible = true;
-                BtnConf.Visible = false;
-                BtnCancel.Visible = false;
-                groupBox3.Enabled = true;
-                Limpa_Form();
-                Pesquisar_Geftb003(0);
-            }
-
+            string hi = mskHoraini.Text;
+            hi = hi.Substring(0, 2) + ":" + hi.Substring(2, 2);
+            string hf = mskHorafim.Text;
+            hf = hf.Substring(0, 2) + ":" + hf.Substring(2, 2);
+            BtnCadastrar.Visible = true;
+            BtnLimpForm.Visible = true;
+            BtnAtuReg.Visible = true;
+            BtnSair.Visible = true;
+            BtnImpTabAtv.Visible = true;
+            BtnConf.Visible = false;
+            BtnCancel.Visible = false;
+            groupBox3.Enabled = true;
+            Limpa_Form();
+            Pesquisar_Geftb003(0);
         }
 
         /// <summary>

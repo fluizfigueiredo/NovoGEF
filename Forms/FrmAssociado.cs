@@ -402,6 +402,7 @@ namespace NovoGEF.Forms
                                                 MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
+                    _associado.Dt_Fim = DtpFim.Value.string("dd/MM/yyyy");
                     var resultValidation = _associado.Update();
                     if (resultValidation == "ok")
                        MessageBox.Show("Associado atualizado com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -414,15 +415,11 @@ namespace NovoGEF.Forms
                                                 MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
+                    _associado.Dt_Fim = null;
                     var resultValidation = _associado.Update();
                     if (resultValidation == "ok")
                         MessageBox.Show("Associado atualizado com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-            }else
-            {
-                var resultValidation = _associado.Update();
-                if (resultValidation == "ok")
-                    MessageBox.Show("Associado atualizado com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             Limpa_Form();
             Pesquisar_Geftb002(0);
