@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -14,7 +14,7 @@ namespace NovoGEF.Database
     /// <summary>
     /// Classe responsável pelas operações de acesso e manipulação de dados da tabela de atividades (geftb003).
     /// </summary>
-    public class Geftb003
+    public class AtividadeContext
     {
         /// <summary>
         /// Busca atividades conforme o status de ativo/inativo.

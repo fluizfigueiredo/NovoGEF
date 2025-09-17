@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace NovoGEF
+namespace NovoGEF.Database
 {
     /// <summary>
     /// Classe responsável pelas operações de acesso e manipulação de dados da tabela geftb006.

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Runtime.Remoting.Messaging;
 
-namespace NovoGEF
+namespace NovoGEF.Database
 {
     /// <summary>
     /// Classe responsável pelas operações de acesso e manipulação de dados da tabela de usuários (geftb001).

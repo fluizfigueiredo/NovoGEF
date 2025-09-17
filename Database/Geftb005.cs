@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NovoGEF
+namespace NovoGEF.Database
 {
     /// <summary>
     /// Classe responsável pelas operações de acesso e manipulação de dados da tabela de agenda de atividades (geftb005).

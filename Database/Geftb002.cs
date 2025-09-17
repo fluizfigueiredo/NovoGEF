@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 using NovoGEF.Models;
 
-namespace NovoGEF
+namespace NovoGEF.Database
 {
     /// <summary>
     /// Classe responsável pelas operações de acesso e manipulação de dados da tabela de associados (geftb002).
