@@ -119,7 +119,23 @@ namespace NovoGEF.Models
         {
             var result = Validar();
             if (result == "ok")
-                return _associadoContext.Insert2(this, ParmGlobal.titoudep);
+                return _associadoContext.Insert(this, ParmGlobal.titoudep);
+            else
+                return result;
+        }
+        
+        /// <summary>
+        /// Altera o associado no banco de dados após validação dos dados.
+        /// Retorna "ok" se a inserção for bem-sucedida ou uma mensagem de erro caso contrário.
+        /// </summary>
+        /// <returns>
+        /// Uma string "ok" se a inserção for bem-sucedida; caso contrário, uma string contendo as mensagens de erro.
+        /// </returns>
+        public string Update()
+        {
+            var result = Validar();
+            if (result == "ok")
+                return _associadoContext.Update(this);
             else
                 return result;
         }

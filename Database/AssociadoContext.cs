@@ -172,65 +172,61 @@ namespace NovoGEF.Database
         /// <summary>
         /// Atualiza os dados de um associado no banco de dados.
         /// </summary>
-        /// <param name="idassociado">Id do associado.</param>
-        /// <param name="nome">Nome do associado.</param>
-        /// <param name="dtnasc">Data de nascimento.</param>
-        /// <param name="dtini">Data de início.</param>
-        /// <param name="dtfim">Data de fim.</param>
-        /// <param name="cpf">CPF do associado.</param>
-        /// <param name="tel1">Telefone 1.</param>
-        /// <param name="tel2">Telefone 2.</param>
-        /// <param name="email">E-mail do associado.</param>
-        /// <param name="end">Endereço.</param>
-        /// <param name="bairro">Bairro.</param>
-        /// <param name="cidade">Cidade.</param>
-        /// <param name="cep">CEP.</param>
-        /// <param name="parentesco">Parentesco.</param>
-        /// <param name="obs">Observações.</param>
-        /// <param name="id_usuario">Chave do usuario.</param>
-        /// <param name="dtgravacao">Data de gravação.</param>
+        /// <param name="associado">Objeto Associado a ser inserido.</param>
         /// <returns>DataTable preenchido com os dados do associado atualizado.</returns>
-        public DataTable Update(int idassociado, string nome, string dtnasc, string dtini, string dtfim, string cpf, string tel1, string tel2, string email, string end, string bairro, string cidade, string cep, string parentesco, string obs, int id_usuario, string dtgravacao)
+        public DataTable Update(Associado associado)
         {
-            var dt = new DataTable();
-            SqlConnection con = new SqlConnection(Conn.strConn);
-
+            var sql = "UPDATE [dbo].[geftb002_associado] SET " +
+			          "dt_ini 				= 	@dt_ini, " +
+			          "dt_fim 				= 	@dt_fim, " +
+			          "nome 				= 	UPPER(@nome), " +
+			          "dt_nascimento 		= 	@dt_nascimento, " +
+			          "endereco 			=	UPPER(@endereco), " +
+			          "bairro 				= 	UPPER(@bairro), " +
+			          "cidade 				= 	UPPER(@cidade), " +
+			          "cep 					= 	@cep, " +
+			          "tel1 				= 	@tel1, " +
+			          "tel2 				=	@tel2, " +
+			          "cpf 					= 	@cpf, " +
+			          "obs 					= 	UPPER(@obs), " +
+			          "email 				= 	@email, " +
+			          "parentesco 			= 	@parentesco, " +
+			          "dt_gravacao 			= 	@dt_gravacao, " +
+			          "geftb001_usuario_id_usuario 	=	@geftb001_usuario_id_usuario " +
+	                  "WHERE id_associado = @id_associado";
             try
             {
-                if (con.State == System.Data.ConnectionState.Closed)
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@idassociado", associado.id_associado);
+                        cmd.Parameters.AddWithValue("@nome", associado.Nome);
+                        cmd.Parameters.AddWithValue("@dt_nascimento", associado.Dt_Nascimento);
+                        cmd.Parameters.AddWithValue("@dt_ini", associado.Dt_Ini);
+                        cmd.Parameters.AddWithValue("@dt_fim", associado.Dt_Fim);
+                        cmd.Parameters.AddWithValue("@cpf", associado.Cpf);
+                        cmd.Parameters.AddWithValue("@tel1", associado.Tel1);
+                        cmd.Parameters.AddWithValue("@tel2", associado.Tel2);
+                        cmd.Parameters.AddWithValue("@email", associado.Email);
+                        cmd.Parameters.AddWithValue("@endereco", associado.Endereco);
+                        cmd.Parameters.AddWithValue("@bairro", associado.Bairro);
+                        cmd.Parameters.AddWithValue("@cidade", associado.Cidade);
+                        cmd.Parameters.AddWithValue("@cep", associado.Cep);
+                        cmd.Parameters.AddWithValue("@parentesco", associado.Parentesco);
+                        cmd.Parameters.AddWithValue("@obs", associado.Obs);
+                        cmd.Parameters.AddWithValue("@dt_gravacao", associado.Dt_Gravacao);
+                        cmd.Parameters.AddWithValue("@geftb001_usuario_id_usuario", associado.Geftb001_Id_Usuario);
+                        cmd.ExecuteNonQuery();
+                    }
                 }
-                SqlDataAdapter da = new SqlDataAdapter(null, con);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.CommandText = "sp_atualizar_geftb002";
-                da.SelectCommand.Parameters.AddWithValue("@id_associado", idassociado);
-                da.SelectCommand.Parameters.AddWithValue("@nome", nome);
-                da.SelectCommand.Parameters.AddWithValue("@dt_nascimento", dtnasc);
-                da.SelectCommand.Parameters.AddWithValue("@dt_ini", dtini);
-                da.SelectCommand.Parameters.AddWithValue("@dt_fim", dtfim);
-                da.SelectCommand.Parameters.AddWithValue("@cpf", cpf);
-                da.SelectCommand.Parameters.AddWithValue("@tel1", tel1);
-                da.SelectCommand.Parameters.AddWithValue("@tel2", tel2);
-                da.SelectCommand.Parameters.AddWithValue("@email", email);
-                da.SelectCommand.Parameters.AddWithValue("@endereco", end);
-                da.SelectCommand.Parameters.AddWithValue("@bairro", bairro);
-                da.SelectCommand.Parameters.AddWithValue("@cidade", cidade);
-                da.SelectCommand.Parameters.AddWithValue("@cep", cep);
-                da.SelectCommand.Parameters.AddWithValue("@parentesco", parentesco);
-                da.SelectCommand.Parameters.AddWithValue("@obs", obs);
-                da.SelectCommand.Parameters.AddWithValue("@dt_gravacao", dtgravacao);
-                da.SelectCommand.Parameters.AddWithValue("@geftb001_usuario_id_usuario", id_usuario);
-                da.Fill(dt); 
+                return "";
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
-                MessageBox.Show("Houve uma falha no banco de dados ao alterar os dados. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }finally
-            {
-                con.Close();
+                return "Houve uma falha no banco de dados ao alterar os dados do associado. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace;
             }
-            return dt;
         }
         /// <summary>
         /// Insere um novo associado no banco de dados utilizando um objeto Associado e o tipo ou dependente.
@@ -238,7 +234,7 @@ namespace NovoGEF.Database
         /// <param name="associado">Objeto Associado a ser inserido.</param>
         /// <param name="titoudep">Tipo ou dependente.</param>
         /// <returns>String vazia em caso de sucesso ou mensagem de erro em caso de falha.</returns>
-        public string Insert2(Associado associado, int titoudep)
+        public string Insert(Associado associado, int titoudep)
         {
             var sql = "";
             if (titoudep == 0)
@@ -286,73 +282,6 @@ namespace NovoGEF.Database
             {
                 return "Houve uma falha no banco de dados ao incluir os dados do associado. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace;
             }
-        }
-
-        /// <summary>
-        /// Insere um novo associado no banco de dados.
-        /// </summary>
-        /// <param name="titoudep">Tipo ou dependente.</param>
-        /// <param name="matricula">Matrícula do associado.</param>
-        /// <param name="nome">Nome do associado.</param>
-        /// <param name="dtnasc">Data de nascimento.</param>
-        /// <param name="dtini">Data de início.</param>
-        /// <param name="dtfim">Data de fim.</param>
-        /// <param name="cpf">CPF do associado.</param>
-        /// <param name="tel1">Telefone 1.</param>
-        /// <param name="tel2">Telefone 2.</param>
-        /// <param name="email">E-mail do associado.</param>
-        /// <param name="end">Endereço.</param>
-        /// <param name="bairro">Bairro.</param>
-        /// <param name="cidade">Cidade.</param>
-        /// <param name="cep">CEP.</param>
-        /// <param name="parentesco">Parentesco.</param>
-        /// <param name="obs">Observações.</param>
-        /// <param name="id_usuario">Chave do usuario.</param>
-        /// <param name="dtgravacao">Data de gravação.</param>
-        /// <returns>DataTable preenchido com os dados do associado inserido.</returns>
-        public DataTable Insert(int titoudep, string matricula, string nome, string dtnasc, string dtini, string dtfim, string cpf, string tel1, string tel2, string email, string end, string bairro, string cidade, string cep, string parentesco, string obs,  int id_usuario, string dtgravacao)
-        {
-            var dt = new DataTable();
-            SqlConnection con = new SqlConnection(Conn.strConn);
-
-            try
-            {
-                if (con.State == System.Data.ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-                SqlDataAdapter da = new SqlDataAdapter(null, con);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.CommandText = "sp_inserir_geftb002";
-                da.SelectCommand.Parameters.AddWithValue("@titoudep", titoudep);
-                da.SelectCommand.Parameters.AddWithValue("@matricula", matricula);
-                da.SelectCommand.Parameters.AddWithValue("@nome", nome);
-                da.SelectCommand.Parameters.AddWithValue("@dt_nascimento", dtnasc);
-                da.SelectCommand.Parameters.AddWithValue("@dt_ini", dtini);
-                da.SelectCommand.Parameters.AddWithValue("@dt_ini", dtfim);
-                da.SelectCommand.Parameters.AddWithValue("@cpf", cpf);
-                da.SelectCommand.Parameters.AddWithValue("@tel1", tel1);
-                da.SelectCommand.Parameters.AddWithValue("@tel2", tel2);
-                da.SelectCommand.Parameters.AddWithValue("@email", email);
-                da.SelectCommand.Parameters.AddWithValue("@endereco", end);
-                da.SelectCommand.Parameters.AddWithValue("@bairro", bairro);
-                da.SelectCommand.Parameters.AddWithValue("@cidade", cidade);
-                da.SelectCommand.Parameters.AddWithValue("@cep", cep);
-                da.SelectCommand.Parameters.AddWithValue("@parentesco", parentesco);
-                da.SelectCommand.Parameters.AddWithValue("@obs", obs);
-                da.SelectCommand.Parameters.AddWithValue("@dt_gravacao", dtgravacao);
-                da.SelectCommand.Parameters.AddWithValue("@geftb001_usuario_id_usuario", id_usuario);
-                da.Fill(dt);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Houve uma falha no banco de dados ao alterar os dados. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                con.Close();
-            }
-            return dt;
         }
     }
 }
