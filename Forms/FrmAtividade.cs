@@ -23,6 +23,8 @@ using System.Runtime.ConstrainedExecution;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
 using System.IO;
+using NovoGEF.Util;
+using NovoGEF.Models;
 
 namespace NovoGEF.Forms
 {
@@ -31,6 +33,7 @@ namespace NovoGEF.Forms
     /// </summary>
     public partial class FrmAtividade : Form
     {
+        Atividade _atividade = new Atividade();
         /// <summary>
         /// Inicializa uma nova instância do formulário de atividade.
         /// </summary>
@@ -96,67 +99,6 @@ namespace NovoGEF.Forms
             else if (RbColaborador.Checked == true)
             {
                 rb = 1;
-            }
-
-            if (String.IsNullOrEmpty(tbSigla.Text))
-            {
-                MessageBox.Show("Campo sigla não aceita vazio.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tbSigla.Focus();
-                return 1;
-            }
-            else if (String.IsNullOrEmpty(tbDescricao.Text))
-            {
-                MessageBox.Show("Campo descrição não aceita vazio.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tbDescricao.Focus();
-                return 1;
-            }
-            else if (String.IsNullOrEmpty(mskHoraini.Text))
-            {
-                MessageBox.Show("Campo hora inicial deve ser preenchido.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                mskHoraini.Focus();
-                return 1;
-            }
-            else if (!String.IsNullOrEmpty(hrini) && !isNumeric_hrini)
-            {
-                MessageBox.Show("Campo hora inicial deve conter números.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                mskHoraini.Focus();
-                return 1;
-            }
-            else if (String.IsNullOrEmpty(mskHorafim.Text))
-            {
-                MessageBox.Show("Campo hora final deve ser preenchido.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                mskHorafim.Focus();
-                return 1;
-            }
-            else if (!String.IsNullOrEmpty(hrfim) && !isNumeric_hrfim)
-            {
-                MessageBox.Show("Campo hora final deve conter números.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                mskHorafim.Focus();
-                return 1;
-            }
-            else if (rb == 0 && cbSubgrupo2.SelectedIndex == -1)
-            {
-                MessageBox.Show("Selecione um subgrupo de assitência social.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbSubgrupo2.Focus();
-                return 1;
-            }
-            else if (rb == 1 && cbSubgrupo1.SelectedIndex == -1)
-            {
-                MessageBox.Show("Selecione um subgrupo de colaborador.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbSubgrupo1.Focus();
-                return 1;
-            }
-            else if (cbDiasemana.SelectedIndex == -1)
-            {
-                MessageBox.Show("Selecione o dia da semana que a atividade ocorrerá.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbDiasemana.Focus();
-                return 1;
-            }
-            else if (cbPeriodo.SelectedIndex == -1)
-            {
-                MessageBox.Show("selecione o periodo que a atividade ocorrerá.", "Atenção", MessageBoxButtons.OK);
-                cbPeriodo.Focus();
-                return 1;
             }
 
             return 0;
@@ -378,25 +320,32 @@ namespace NovoGEF.Forms
         /// </summary>
         private void BtnConf_Click(object sender, EventArgs e)
         {
-            int critica = IsValidForm();
-            if (critica == 0)
+            _atividade.Id_atividade = 0;
+            _atividade.Sigla = tbSigla.Text;
+            _atividade.Descricao = tbDescricao.Text;
+            _atividade.Dt_Ini = DtpInicio.Value.ToString("yyyy/MM/dd");
+            _atividade.Dt_Fim = null;
+            _atividade.Dt_Ini = mskHoraini.text;
+            _atividade.Hr_Fim = mskHorafim.text;
+            string gr, sgr;
+            if (RbAssSoc.Checked == true)
             {
-                string gr, sgr;
-                if (RbAssSoc.Checked == true)
-                {
-                    gr = "ASSISTÊNCIA SOCIAL";
-                    sgr = cbSubgrupo2.Text;
-                }
-                else
-                {
-                    gr = "COLABORADORES";
-                    sgr = cbSubgrupo1.Text;
-                }
-                string dt2 = DtpInicio.Value.ToString("yyyy/MM/dd");
-                string dt4 = DateTime.Now.ToString("yyyy/MM/dd");
-                var geftb003 = new Geftb003();
-                geftb003.Insert(dt2, tbSigla.Text, tbDescricao.Text,
-                mskHoraini.Text, mskHorafim.Text, gr, sgr, cbDiasemana.Text, cbPeriodo.Text, dt4);
+                _atividade.Grupo = "ASSISTÊNCIA SOCIAL";
+                _atividade.SubGrupo = cbSubgrupo2.Text;
+            }
+            else
+            {
+                _atividade.Grupo = "COLABORADORES";
+                _atividade.SubGrupo = cbSubgrupo1.Text;
+            }
+            _atividade.DiaSemana = cbDiasemana.Text;
+            _atividade.Periodo = cbPeriodo.Text;
+            _atividade.Geftb001_Id_Usuario = ParmGlobal.usuarioId;
+            _atividade.Dt_Gravacao = DateTime.Now;
+        
+            var result = _atividade.Insert();
+            if (result == "ok")
+            {
                 MessageBox.Show("Atividade incluida com sucesso.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Limpa_Form();
                 CbxDtFim.Visible = true;
@@ -436,20 +385,62 @@ namespace NovoGEF.Forms
         /// </summary>
         private void BtnAtuReg_Click(object sender, EventArgs e)
         {
-            int critica = IsValidForm();
-            if (critica == 0)
+            _atividade.Id_atividade = int.Parse(tbCodigo.Text);
+            _atividade.Sigla = tbSigla.Text;
+            _atividade.Descricao = tbDescricao.Text;
+            _atividade.Dt_Ini = DtpInicio.Value.ToString("yyyy/MM/dd");
+            _atividade.Dt_Fim = null;
+            _atividade.Dt_Ini = mskHoraini.text;
+            _atividade.Hr_Fim = mskHorafim.text;
+            string gr, sgr;
+            if (RbAssSoc.Checked == true)
             {
-                string gr, sgr;
-                if (RbAssSoc.Checked == true)
+                _atividade.Grupo = "ASSISTÊNCIA SOCIAL";
+                _atividade.SubGrupo = cbSubgrupo2.Text;
+            }
+            else
+            {
+                _atividade.Grupo = "COLABORADORES";
+                _atividade.SubGrupo = cbSubgrupo1.Text;
+            }
+            _atividade.DiaSemana = cbDiasemana.Text;
+            _atividade.Periodo = cbPeriodo.Text;
+            _atividade.Geftb001_Id_Usuario = ParmGlobal.usuarioId;
+            _atividade.Dt_Gravacao = DateTime.Now;
+            if (CbxAtividadeDesligado.Checked  == false && CbxDtFim.Checked == true)
+            {
+                var result = MessageBox.Show( "Quer realmente desativar essa atividade?", "ATENÇÃO",
+                                                MessageBoxButtons.YesNo,
+                                                MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    gr = "ASSISTENCIA SOCIAL";
-                    sgr = cbSubgrupo2.Text;
+                    var result = _atividade.Update();
+                    if (result == "ok")
+                       MessageBox.Show("Atividade atualizada com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
+            }
+            if (CbxADesligado.Checked == true && CbxDtFim.Checked == false)
+            {
+                var result = MessageBox.Show("Quer realmente reativar essa aatividade?", "ATENÇÃO",
+                                                MessageBoxButtons.YesNo,
+                                                MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    gr = "COLABORADORES";
-                    sgr = cbSubgrupo1.Text;
+                    var result = _atividade.Update();
+                    if (result == "ok")
+                        MessageBox.Show("Atividade atualizada com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+            }else
+            {
+                var result = _atividade.Update();
+                if (result == "ok")
+                    MessageBox.Show("Atividade atualizado com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            var result = _atividade.Update();
+            if (result == "ok")
+            {
+
                 bool ativado = false;
                 if (TbDtFim.Text == "")
                 {

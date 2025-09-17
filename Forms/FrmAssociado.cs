@@ -13,7 +13,6 @@ namespace NovoGEF.Forms
     /// </summary>
     public partial class FrmAssociado : Form
     {
-
         Associado _associado = new Associado();
         /// <summary>
         /// Inicializa uma nova instância do formulário de associado.
@@ -376,67 +375,57 @@ namespace NovoGEF.Forms
         /// </summary>
         private void BtnAtuReg_Click(object sender, EventArgs e)
         {
-            if (_associado.Validar() == "ok")
+            String cpf = MskCpf.Text;
+            String cep = MskCep.Text;
+            _associado.Id_Associado = int.Parse(TbIdAssociado.Text);
+            _associado.Matricula = TbMatricula.Text;
+            _associado.Nome = TbNome.Text;
+            _associado.Dt_Nascimento = DtpNascimento.Value.ToString("yyyy/MM/dd");
+            _associado.Dt_Ini = DtpInicio.Value.ToString("yyyy/MM/dd");
+            _associado.Dt_Fim = null;
+            _associado.Cpf = cpf.PadLeft(11, '0');
+            _associado.Tel1 = TbTel1.Text;
+            _associado.Tel2 = TbTel2.Text;
+            _associado.Email = TbEmail.Text;
+            _associado.Endereco = TbEndereco.Text;
+            _associado.Bairro = TbBairro.Text;
+            _associado.Cidade = TbCidade.Text;
+            _associado.Cep = cep.PadLeft(8, '0');
+            _associado.Parentesco = CbParentesco.Text;
+            _associado.Obs = TbObs.Text;
+            _associado.Geftb001_Id_Usuario = ParmGlobal.usuarioId;
+            _associado.Dt_Gravacao = DateTime.Now;
+            if (CbxAssociadoDesligado.Checked  == false && CbxDtFim.Checked == true)
             {
-                String cpf = MskCpf.Text;
-                String cep = MskCep.Text;
-                _associado.Id_Associado = int.Parse(TbIdAssociado.Text);
-                _associado.Matricula = TbMatricula.Text;
-                _associado.Nome = TbNome.Text;
-                _associado.Dt_Nascimento = DtpNascimento.Value.ToString("yyyy/MM/dd");
-                _associado.Dt_Ini = DtpInicio.Value.ToString("yyyy/MM/dd");
-                _associado.Dt_Fim = null;
-                _associado.Cpf = cpf.PadLeft(11, '0');
-                _associado.Tel1 = TbTel1.Text;
-                _associado.Tel2 = TbTel2.Text;
-                _associado.Email = TbEmail.Text;
-                _associado.Endereco = TbEndereco.Text;
-                _associado.Bairro = TbBairro.Text;
-                _associado.Cidade = TbCidade.Text;
-                _associado.Cep = cep.PadLeft(8, '0');
-                _associado.Parentesco = CbParentesco.Text;
-                _associado.Obs = TbObs.Text;
-                _associado.Geftb001_Id_Usuario = ParmGlobal.usuarioId;
-                _associado.Dt_Gravacao = DateTime.Now;
-                if (CbxAssociadoDesligado.Checked  == false && CbxDtFim.Checked == true)
+                var result = MessageBox.Show("Quer realmente desligar esse associado?", "ATENÇÃO",
+                                                MessageBoxButtons.YesNo,
+                                                MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    const string message = "Quer realmente desligar esse associado?";
-                    const string caption = "ATENÇÃO";
-                    var result = MessageBox.Show(message, caption,
-                                                 MessageBoxButtons.YesNo,
-                                                 MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
-                    {
-                        var geftb002 = new Geftb002();
-                        geftb002.Update(Convert.ToInt32(TbIdAssociado.Text), _associado.Nome, _associado.Dt_Nascimento, _associado.Dt_Ini, _associado.Dt_Fim, cpf, _associado.Tel1, _associado.Tel2, _associado.Email, 
-                            _associado.Endereco, _associado.Bairro, _associado.Cidade, _associado.Cep, _associado.Parentesco, _associado.Obs, _associado.Geftb001_Id_Usuario, _associado.Dt_Gravacao.ToString("dd/MM/yyyy"));
-                        MessageBox.Show("Associado atualizado com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    var resultValidation = _associado.Update();
+                    if (resultValidation == "ok")
+                       MessageBox.Show("Associado atualizado com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                if (CbxAssociadoDesligado.Checked == true && CbxDtFim.Checked == false)
-                {
-                    const string message = "Quer realmente reativar esse associado?";
-                    const string caption = "ATENÇÃO";
-                    var result = MessageBox.Show(message, caption,
-                                                 MessageBoxButtons.YesNo,
-                                                 MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
-                    {
-                        var geftb002 = new Geftb002();
-                        geftb002.Update(Convert.ToInt32(TbIdAssociado.Text), _associado.Nome, _associado.Dt_Nascimento, _associado.Dt_Ini, _associado.Dt_Fim, cpf, _associado.Tel1, _associado.Tel2, _associado.Email,
-                            _associado.Endereco, _associado.Bairro, _associado.Cidade, _associado.Cep, _associado.Parentesco, _associado.Obs, _associado.Geftb001_Id_Usuario, _associado.Dt_Gravacao.ToString("dd/MM/yyyy"));
-                        MessageBox.Show("Associado atualizado com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }else
-                {
-                    var geftb002 = new Geftb002();
-                    geftb002.Update(Convert.ToInt32(TbIdAssociado.Text), _associado.Nome, _associado.Dt_Nascimento, _associado.Dt_Ini, _associado.Dt_Fim, cpf, _associado.Tel1, _associado.Tel2, _associado.Email,
-                        _associado.Endereco, _associado.Bairro, _associado.Cidade, _associado.Cep, _associado.Parentesco, _associado.Obs, _associado.Geftb001_Id_Usuario, _associado.Dt_Gravacao.ToString("dd/MM/yyyy"));
-                    MessageBox.Show("Associado atualizado com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                Limpa_Form();
-                Pesquisar_Geftb002(0);
             }
+            if (CbxAssociadoDesligado.Checked == true && CbxDtFim.Checked == false)
+            {
+                var result = MessageBox.Show("Quer realmente reativar esse associado?", "ATENÇÃO",
+                                                MessageBoxButtons.YesNo,
+                                                MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    var resultValidation = _associado.Update();
+                    if (resultValidation == "ok")
+                        MessageBox.Show("Associado atualizado com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }else
+            {
+                var resultValidation = _associado.Update();
+                if (resultValidation == "ok")
+                    MessageBox.Show("Associado atualizado com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            Limpa_Form();
+            Pesquisar_Geftb002(0);
         }
 
         /// <summary>
