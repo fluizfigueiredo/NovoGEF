@@ -1,0 +1,236 @@
+﻿using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Windows.Forms;
+using System.Reflection.Emit;
+
+namespace NovoGEF
+{
+    /// <summary>
+    /// Classe responsável pela geração de relatórios PDF da tabela de atividades.
+    /// </summary>
+    class RelPDF_TabAtividade
+    {
+        /// <summary>
+        /// Gera o relatório PDF da tabela de atividades a partir de um DataTable.
+        /// </summary>
+        /// <param name="dt">DataTable contendo os dados das atividades.</param>
+        public static void GerarRelatorioPDF(DataTable dt)
+        {
+            if (dt.Rows.Count > 0)
+            {
+                int totalPaginas = 1;
+                if (dt.Rows.Count > 24)
+                    totalPaginas += (int)Math.Ceiling(
+                        (dt.Rows.Count - 24) / 24F);
+
+                var pxPorMm = 72 / 25.2F;
+                var pdf = new Document(PageSize.A4, 15 * pxPorMm, 15 * pxPorMm, 15 * pxPorMm, 20 * pxPorMm);
+                var arquivo = new FileStream(ParmGlobal.nomeArquivo, FileMode.Create);
+                var writer = PdfWriter.GetInstance(pdf, arquivo);
+                writer.PageEvent = new RodapeRelatorioPDF(totalPaginas);
+                pdf.Open();
+
+                var tabela = new PdfPTable(3);
+                float[] larguras = { 0.6f, 0.6f, 2f };
+                tabela.SetWidths(larguras);
+                tabela.DefaultCell.BorderWidth = 0;
+                tabela.WidthPercentage = 100;
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    CriarCelulaTexto(i, tabela, dt.Rows[i].Field<Int32>("id_atividade").ToString("D5"), PdfPCell.ALIGN_CENTER, true);
+                    CriarCelulaTexto(i, tabela, dt.Rows[i].Field<string>("sigla"), PdfPCell.ALIGN_LEFT, true);
+                    CriarCelulaTexto(i, tabela, dt.Rows[i].Field<string>("descricao"), PdfPCell.ALIGN_LEFT, true);
+                }
+                pdf.Add(tabela);
+
+                pdf.Close();
+                arquivo.Close();
+
+                DialogResult res = MessageBox.Show("Deseja abrir o relatório?", "Relatório", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start(ParmGlobal.nomeArquivo);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Não existem dados para imprimir.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// Cria uma célula de texto para a tabela do PDF.
+        /// </summary>
+        /// <param name="i">Índice da linha.</param>
+        /// <param name="tabela">Tabela do PDF.</param>
+        /// <param name="texto">Texto da célula.</param>
+        /// <param name="alinhamento">Alinhamento do texto.</param>
+        /// <param name="negrito">Define se o texto será negrito.</param>
+        /// <param name="italico">Define se o texto será itálico.</param>
+        /// <param name="tamanhoFonte">Tamanho da fonte.</param>
+        /// <param name="alturaCelula">Altura da célula.</param>
+        static void CriarCelulaTexto(int i, PdfPTable tabela, string texto,
+            int alinhamento = PdfPCell.ALIGN_LEFT,
+            bool negrito = false, bool italico = false,
+            int tamanhoFonte = 10, int alturaCelula = 25)
+        {
+            int estilo = iTextSharp.text.Font.NORMAL;
+            if (negrito && italico)
+            {
+                estilo = iTextSharp.text.Font.BOLDITALIC;
+            }
+            else if (negrito)
+            {
+                estilo = iTextSharp.text.Font.BOLD;
+            }
+            else if (italico)
+            {
+                estilo = iTextSharp.text.Font.ITALIC;
+            }
+
+            BaseFont fonteBase = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, false);
+            iTextSharp.text.Font fonte = new iTextSharp.text.Font(fonteBase, tamanhoFonte, estilo, iTextSharp.text.BaseColor.BLACK);
+
+            var bgColor = iTextSharp.text.BaseColor.WHITE;
+            if (i % 2 == 1)
+                bgColor = new BaseColor(0.95f, 0.95f, 0.95f);
+
+            PdfPCell celula = new PdfPCell(new Phrase(texto, fonte));
+            celula.HorizontalAlignment = alinhamento;
+            celula.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+            celula.Border = 0;
+            celula.BorderWidthBottom = 1;
+            celula.PaddingBottom = 5;
+            celula.FixedHeight = alturaCelula;
+            celula.BackgroundColor = bgColor;
+            tabela.AddCell(celula);
+        }
+
+        /// <summary>
+        /// Cria uma célula de imagem para a tabela do PDF.
+        /// </summary>
+        /// <param name="tabela">Tabela do PDF.</param>
+        /// <param name="caminhoImagem">Caminho da imagem.</param>
+        /// <param name="larguraImagem">Largura da imagem.</param>
+        /// <param name="alturaImagem">Altura da imagem.</param>
+        /// <param name="alturaCelula">Altura da célula.</param>
+        static void criarCelulaImagem(PdfPTable tabela, string caminhoImagem,
+            int larguraImagem, int alturaImagem, int alturaCelula = 25)
+        {
+            var bgColor = iTextSharp.text.BaseColor.WHITE;
+            if (tabela.Rows.Count % 2 == 1)
+                bgColor = new BaseColor(0.95f, 0.95f, 0.95f);
+
+            if (File.Exists(caminhoImagem))
+            {
+                iTextSharp.text.Image imagem =
+                    iTextSharp.text.Image.GetInstance(caminhoImagem);
+                imagem.ScaleToFit(larguraImagem, alturaImagem);
+                PdfPCell celula = new PdfPCell(imagem);
+                celula.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                celula.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                celula.Border = 0;
+                celula.BorderWidthBottom = 1;
+                celula.FixedHeight = alturaCelula;
+                celula.BackgroundColor = bgColor;
+                tabela.AddCell(celula);
+            }
+            else
+            {
+                tabela.AddCell("ERRO");
+            }
+        }
+
+        /// <summary>
+        /// Classe responsável por adicionar rodapé e cabeçalho ao relatório PDF.
+        /// </summary>
+        class RodapeRelatorioPDF : PdfPageEventHelper
+        {
+            BaseFont familiaFonteRodape;
+            iTextSharp.text.Font fonteRodape;
+            int totalPaginas = 0;
+
+            PdfContentByte cb;
+            private readonly PdfTemplate template;
+
+            /// <summary>
+            /// Inicializa o rodapé do relatório PDF.
+            /// </summary>
+            /// <param name="totalPaginas">Total de páginas do relatório.</param>
+            public RodapeRelatorioPDF(int totalPaginas)
+            {
+                familiaFonteRodape = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, false);
+                fonteRodape = new iTextSharp.text.Font(familiaFonteRodape, 8f, iTextSharp.text.Font.NORMAL, iTextSharp.text.BaseColor.BLACK);
+                this.totalPaginas = totalPaginas;
+            }
+
+            /// <summary>
+            /// Evento disparado ao abrir o documento PDF.
+            /// </summary>
+            public override void OnOpenDocument(PdfWriter writer, Document document)
+            {
+                cb = writer.DirectContent;
+            }
+
+            /// <summary>
+            /// Evento disparado ao finalizar uma página do PDF.
+            /// </summary>
+            public override void OnEndPage(PdfWriter writer, Document document)
+            {
+                base.OnEndPage(writer, document);
+                AdicionarMomentoDaGeracao(writer, document);
+                AdicionarNumeroPaginaAtual(writer, document);
+            }
+
+            /// <summary>
+            /// Adiciona a data e hora de geração do relatório no rodapé.
+            /// </summary>
+            private void AdicionarMomentoDaGeracao(PdfWriter writer, Document document)
+            {
+                String textoDataGeracao = $"Gerado em {DateTime.Now.ToShortDateString()} às " +
+                    $"{DateTime.Now.ToShortTimeString()}";
+
+                writer.DirectContent.BeginText();
+                writer.DirectContent.SetFontAndSize(fonteRodape.BaseFont, fonteRodape.Size);
+                writer.DirectContent.SetTextMatrix(document.LeftMargin,
+                    document.BottomMargin * 0.75f);
+                writer.DirectContent.ShowText(textoDataGeracao);
+                writer.DirectContent.EndText();
+            }
+
+            /// <summary>
+            /// Adiciona o número da página atual no rodapé.
+            /// </summary>
+            private void AdicionarNumeroPaginaAtual(PdfWriter writer, Document document)
+            {
+                int paginaAtual = writer.PageNumber;
+                String textoPaginaAtual = "Página " + paginaAtual.ToString() + " de " + totalPaginas.ToString();
+
+                float larguraTextoPaginaAtual =
+                    fonteRodape.BaseFont.GetWidthPoint(textoPaginaAtual, fonteRodape.Size);
+
+                iTextSharp.text.Rectangle tamanhoPagina = document.PageSize;
+
+                writer.DirectContent.BeginText();
+                writer.DirectContent.SetFontAndSize(fonteRodape.BaseFont, fonteRodape.Size);
+                writer.DirectContent.SetTextMatrix(tamanhoPagina.Width -
+                    (document.RightMargin + larguraTextoPaginaAtual),
+                    document.BottomMargin * 0.75f);
+                writer.DirectContent.ShowText(textoPaginaAtual);
+                writer.DirectContent.EndText();
+            }
+
+            // Os demais métodos da região não utilizada podem ser documentados conforme necessidade.
+        }
+    }
+}
+
