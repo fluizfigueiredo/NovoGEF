@@ -27,19 +27,20 @@ namespace NovoGEF.Database
         /// <returns>DataTable preenchido com os dados encontrados.</returns>
         public string Search(int ativo, Atividade atividade)
         {
-            if ativo = 0
+            var sql = "";
+            if (ativo == 0)
             {
-                var sql = "SELECT id_atividade, sigla, descricao, grupo, subgrupo, " +
-                          "hr_ini, hr_fim, dt_ini, dt_fim, diasemana, periodo, " +
-                          "dt_gravacao, geftb001_usuario_id_usuario " +
-                		  "FROM geftb003_atividade WHERE dt_fim IS NULL;"
+                sql =   "SELECT id_atividade, sigla, descricao, grupo, subgrupo, " +
+                        "hr_ini, hr_fim, dt_ini, dt_fim, diasemana, periodo, " +
+                        "dt_gravacao, geftb001_usuario_id_usuario " +
+                	    "FROM geftb003_atividade WHERE dt_fim IS NULL;"
             }
             else
             {
-                var sql = "SELECT id_atividade, sigla, descricao, grupo, subgrupo, " +
-                          "hr_ini, hr_fim, dt_ini, dt_fim, diasemana, periodo, " +
-                          "dt_gravacao, geftb001_usuario_id_usuario " +
-                		  "FROM geftb003_atividade WHERE dt_fim IS NOT NULL;"
+                sql =   "SELECT id_atividade, sigla, descricao, grupo, subgrupo, " +
+                        "hr_ini, hr_fim, dt_ini, dt_fim, diasemana, periodo, " +
+                        "dt_gravacao, geftb001_usuario_id_usuario " +
+                        "FROM geftb003_atividade WHERE dt_fim IS NOT NULL;"
             }
             try
             {
