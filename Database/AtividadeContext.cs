@@ -22,10 +22,8 @@ namespace NovoGEF.Database
         /// <param name="ativo">Indica se busca atividades ativas (0) ou inativas (1).</param>
         /// <param name="dt">DataTable para preenchimento dos dados.</param>
         /// <returns>DataTable preenchido com os dados encontrados.</returns>
-        public DataTable Search(int ativo, DataTable dt)
+        public string Search(int ativo, DataTable dt)
         {
-            SqlConnection con = new SqlConnection(Conn.strConn);
-
             try
             {
                 if (con.State == System.Data.ConnectionState.Closed)
@@ -54,10 +52,8 @@ namespace NovoGEF.Database
         /// <param name="sigla">Sigla da atividade.</param>
         /// <param name="dt">DataTable para preenchimento dos dados.</param>
         /// <returns>DataTable preenchido com os dados encontrados.</returns>
-        public DataTable SearchHorario(string sigla, DataTable dt)
+        public string SearchHorario(string sigla, DataTable dt)
         {
-            SqlConnection con = new SqlConnection(Conn.strConn);
-
             try
             {
                 if (con.State == System.Data.ConnectionState.Closed)
@@ -84,108 +80,117 @@ namespace NovoGEF.Database
         /// <summary>
         /// Atualiza os dados de uma atividade no banco de dados.
         /// </summary>
-        /// <param name="codigo">Código da atividade.</param>
-        /// <param name="dtini">Data de início.</param>
-        /// <param name="dtfim">Data de fim.</param>
-        /// <param name="sigla">Sigla da atividade.</param>
-        /// <param name="descricao">Descrição da atividade.</param>
-        /// <param name="hrini">Hora de início.</param>
-        /// <param name="hrfim">Hora de fim.</param>
-        /// <param name="grupo">Grupo da atividade.</param>
-        /// <param name="subgrupo">Subgrupo da atividade.</param>
-        /// <param name="diasemana">Dia da semana.</param>
-        /// <param name="periodo">Período.</param>
-        /// <param name="dtgravacao">Data de gravação.</param>
+        /// <param name="atividade">Objeto Atividade a ser inserido.</param>
         /// <returns>DataTable preenchido com os dados da atividade atualizada.</returns>
-        public DataTable Update(int codigo, string dtini, string dtfim, string sigla, string descricao, string hrini, string hrfim, string grupo, string subgrupo, string diasemana, string periodo, string dtgravacao)
+        public string Update(Atividade atividade)
         {
-            var dt = new DataTable();
-            SqlConnection con = new SqlConnection(Conn.strConn);
-
+            var sql = "	UPDATE [dbo].[geftb003_atividade] SET " +
+							"sigla = UPPER(@sigla), " +
+							"descricao = UPPER(@descricao), " +
+							"grupo = UPPER(@grupo), " +
+							"subgrupo = UPPER(@subgrupo), " +
+							"hr_ini = @hr_ini, " +
+							"hr_fim = @hr_fim, " +
+							"dt_ini = @dt_ini, " +
+							"dt_fim = @dt_fim, " +
+							"diasemana = UPPER(@diasemana), " +
+							"periodo = UPPER(@periodo), " +
+							"dt_gravacao = @dt_gravacao, " +
+							"geftb001_usuario_id_usuario = @geftb001_usuario_id_usuario " +
+                        	"WHERE id_atividade = @id_atividade;"
             try
             {
-                if (con.State == System.Data.ConnectionState.Closed)
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@id_atividade", atividade.Id_Atividade);
+                        cmd.Parameters.AddWithValue("@dt_ini", atividade.Dt_Ini);
+                        cmd.Parameters.AddWithValue("@dt_fim", atividade.Dt_Fim;
+                        cmd.Parameters.AddWithValue("@sigla", atividade.Sigla);
+                        cmd.Parameters.AddWithValue("@descricao", atividade.Descricao);
+                        cmd.Parameters.AddWithValue("@grupo", atividade.Grupo);
+                        cmd.Parameters.AddWithValue("@subgrupo", atividade.Subgrupo);
+                        cmd.Parameters.AddWithValue("@diasemana", atividade.Diasemana);
+                        cmd.Parameters.AddWithValue("@periodo", atividade.Periodo);
+                        cmd.Parameters.AddWithValue("@hr_ini", atividade.Hr_Ini);
+                        cmd.Parameters.AddWithValue("@hr_fim", atividade.Hr_Fim);
+                        cmd.Parameters.AddWithValue("@dt_gravacao", atividade.Dt_Gravacao);
+                        cmd.Parameters.AddWithValue("@geftb001_usuario_id_usuario", atividade.Geftb001_Id_Usuario);
+                        cmd.ExecuteNonQuery();
+                    }
                 }
-                SqlDataAdapter da = new SqlDataAdapter(null, con);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.CommandText = "sp_atualizar_geftb003";
-                da.SelectCommand.Parameters.AddWithValue("@id_atividade", codigo);
-                da.SelectCommand.Parameters.AddWithValue("@dt_ini", dtini);
-                da.SelectCommand.Parameters.AddWithValue("@dt_fim", dtfim);
-                da.SelectCommand.Parameters.AddWithValue("@sigla", sigla);
-                da.SelectCommand.Parameters.AddWithValue("@descricao", descricao);
-                da.SelectCommand.Parameters.AddWithValue("@grupo", grupo);
-                da.SelectCommand.Parameters.AddWithValue("@subgrupo", subgrupo);
-                da.SelectCommand.Parameters.AddWithValue("@diasemana", diasemana);
-                da.SelectCommand.Parameters.AddWithValue("@periodo", periodo);
-                da.SelectCommand.Parameters.AddWithValue("@hr_ini", hrini);
-                da.SelectCommand.Parameters.AddWithValue("@hr_fim", hrfim);
-                da.SelectCommand.Parameters.AddWithValue("@dt_gravacao", dtgravacao);
-                da.SelectCommand.Parameters.AddWithValue("@geftb001_usuario_id_usuario", ParmGlobal.usuarioId);
-                da.Fill(dt); 
+                 return "";
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
-                MessageBox.Show("Houve uma falha no banco de dados ao alterar os dados. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }finally
-            {
-                con.Close();
+                return "Houve uma falha no banco de dados ao alterar os dados do associado. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace;
             }
-            return dt;
-        }
+       }
 
         /// <summary>
         /// Insere uma nova atividade no banco de dados.
         /// </summary>
-        /// <param name="dtini">Data de início.</param>
-        /// <param name="sigla">Sigla da atividade.</param>
-        /// <param name="descricao">Descrição da atividade.</param>
-        /// <param name="hrini">Hora de início.</param>
-        /// <param name="hrfim">Hora de fim.</param>
-        /// <param name="grupo">Grupo da atividade.</param>
-        /// <param name="subgrupo">Subgrupo da atividade.</param>
-        /// <param name="diasemana">Dia da semana.</param>
-        /// <param name="periodo">Período.</param>
-        /// <param name="dtgravacao">Data de gravação.</param>
+        /// <param name="atividade">Objeto Atividade a ser inserido.</param>
         /// <returns>DataTable preenchido com os dados da atividade inserida.</returns>
-        public DataTable Insert(string dtini, string sigla, string descricao, string hrini, string hrfim, string grupo, string subgrupo, string diasemana, string periodo, string dtgravacao)
+        public string Insert(Atividade atividade)
         {
-            var dt = new DataTable();
-            SqlConnection con = new SqlConnection(Conn.strConn);
-
+            var sql = "INSERT INTO geftb003_atividade ( " +
+                        "id_atividade, " +
+                        "sigla, " +
+                        "descricao, " +
+                        "grupo, " +
+                        "subgrupo, " +
+                        "hr_ini, " +
+                        "hr_fim, " +
+                        "dt_ini, " +
+                        "diasemana, " +
+                        "periodo, " +
+                        "dt_gravacao, " +
+                        "geftb001_usuario_id_usuario) " +
+                    "VALUES ( " +
+                        "NEXT VALUE FOR dbo.geftb003_atividade_idatividade_seq, " +
+                        "UPPER(@sigla), " +
+                        "UPPER(@descricao), " +
+                        "UPPER(@grupo), " +
+                        "UPPER(@subgrupo), " +
+                        "@hr_ini, " +
+                        "@hr_fim, " +
+                        "@dt_ini, " +
+                        "UPPER(@diasemana), " +
+                        "UPPER(@periodo), " +
+                        "@dt_gravacao, " +
+                        "@geftb001_usuario_id_usuario);"
             try
             {
-                if (con.State == System.Data.ConnectionState.Closed)
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@id_atividade", atividade.Id_Atividade);
+                        cmd.Parameters.AddWithValue("@dt_ini", atividade.Dt_Ini);
+                        cmd.Parameters.AddWithValue("@dt_fim", atividade.Dt_Fim;
+                        cmd.Parameters.AddWithValue("@sigla", atividade.Sigla);
+                        cmd.Parameters.AddWithValue("@descricao", atividade.Descricao);
+                        cmd.Parameters.AddWithValue("@grupo", atividade.Grupo);
+                        cmd.Parameters.AddWithValue("@subgrupo", atividade.Subgrupo);
+                        cmd.Parameters.AddWithValue("@diasemana", atividade.Diasemana);
+                        cmd.Parameters.AddWithValue("@periodo", atividade.Periodo);
+                        cmd.Parameters.AddWithValue("@hr_ini", atividade.Hr_Ini);
+                        cmd.Parameters.AddWithValue("@hr_fim", atividade.Hr_Fim);
+                        cmd.Parameters.AddWithValue("@dt_gravacao", atividade.Dt_Gravacao);
+                        cmd.Parameters.AddWithValue("@geftb001_usuario_id_usuario", atividade.Geftb001_Id_Usuario);
+                        cmd.ExecuteNonQuery();
+                    }
                 }
-                SqlDataAdapter da = new SqlDataAdapter(null, con);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.CommandText = "sp_inserir_geftb003";
-                da.SelectCommand.Parameters.AddWithValue("@sigla", sigla);
-                da.SelectCommand.Parameters.AddWithValue("@descricao", descricao);
-                da.SelectCommand.Parameters.AddWithValue("@grupo", grupo);
-                da.SelectCommand.Parameters.AddWithValue("@subgrupo", subgrupo);
-                da.SelectCommand.Parameters.AddWithValue("@hr_ini", hrini);
-                da.SelectCommand.Parameters.AddWithValue("@hr_fim", hrfim);
-                da.SelectCommand.Parameters.AddWithValue("@dt_ini", dtini);
-                da.SelectCommand.Parameters.AddWithValue("@diasemana", diasemana);
-                da.SelectCommand.Parameters.AddWithValue("@periodo", periodo);
-                da.SelectCommand.Parameters.AddWithValue("@dt_gravacao", dtgravacao);
-                da.SelectCommand.Parameters.AddWithValue("@geftb001_usuario_id_usuario", ParmGlobal.usuarioId);
-                da.Fill(dt);
+                 return "";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Houve uma falha no banco de dados ao alterar os dados. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return "Houve uma falha no banco de dados ao alterar os dados do associado. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace;
             }
-            finally
-            {
-                con.Close();
-            }
-            return dt;
         }
     }
 }
