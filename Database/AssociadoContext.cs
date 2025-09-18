@@ -22,7 +22,7 @@ namespace NovoGEF.Database
     /// </summary>
     public class AssociadoContext
     {
-        private readonly string connectionString = Conn.StrConn
+        private readonly string connectionString = Conn.StrConn;
         /// <summary>
         /// Busca associados conforme tipo, classificação e situação.
         /// </summary>
@@ -46,15 +46,12 @@ namespace NovoGEF.Database
                 da.SelectCommand.Parameters.AddWithValue("@classificacao", classificacao);
                 da.SelectCommand.Parameters.AddWithValue("@situacao", situacao);
                 da.Fill(dt);
+                return "";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Houve uma falha no banco de dados ao buscar os dados. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }finally
-            {
-                con.Close();
+                return "Houve uma falha no banco de dados ao buscar os dados. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace;
             }
-            return dt;
         }
 
         /// <summary>
@@ -82,16 +79,12 @@ namespace NovoGEF.Database
                 da.SelectCommand.Parameters.AddWithValue("@situacao", situacao);
                 da.SelectCommand.Parameters.AddWithValue("@matricula", matricula);
                 da.Fill(dt);
+                return "";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Houve uma falha no banco de dados ao buscar os dados. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return "Houve uma falha no banco de dados ao buscar os dados. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace;
             }
-            finally
-            {
-                con.Close();
-            }
-            return dt;
         }
 
         /// <summary>
@@ -119,16 +112,12 @@ namespace NovoGEF.Database
                 da.SelectCommand.Parameters.AddWithValue("@situacao", situacao);
                 da.SelectCommand.Parameters.AddWithValue("@nome", nome);
                 da.Fill(dt);
+                return "";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Houve uma falha no banco de dados ao buscar os dados. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return "Houve uma falha no banco de dados ao buscar os dados. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace;
             }
-            finally
-            {
-                con.Close();
-            }
-            return dt;
         }
 
         /// <summary>
@@ -150,16 +139,12 @@ namespace NovoGEF.Database
                 da.SelectCommand.CommandText = "sp_buscar_idnome_geftb002";
                 da.SelectCommand.Parameters.AddWithValue("@tipo", tipo);
                 da.Fill(dt);
+                return "";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Houve uma falha no banco de dados ao buscar os dados. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                 return "Houve uma falha no banco de dados ao buscar os dados. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace;
             }
-            finally
-            {
-                con.Close();
-            }
-            return dt;
         }
 
         /// <summary>
