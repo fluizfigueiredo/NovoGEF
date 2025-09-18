@@ -30,10 +30,8 @@ namespace NovoGEF.Database
         /// <param name="situacao">Situação do associado.</param>
         /// <param name="dt">DataTable para preenchimento dos dados.</param>
         /// <returns>DataTable preenchido com os dados encontrados.</returns>
-        public DataTable Search(string tipo, int classificacao, int situacao, DataTable dt)
+        public string Search(string tipo, int classificacao, int situacao, DataTable dt)
         {
-            SqlConnection con = new SqlConnection(Conn.strConn);
-
             try
             {
                 if (con.State == System.Data.ConnectionState.Closed)
@@ -67,10 +65,8 @@ namespace NovoGEF.Database
         /// <param name="matricula">Número da matrícula.</param>
         /// <param name="dt">DataTable para preenchimento dos dados.</param>
         /// <returns>DataTable preenchido com os dados encontrados.</returns>
-        public DataTable SearchMatricula(string tipo, int classificacao, int situacao, string matricula, DataTable dt)
+        public string SearchMatricula(string tipo, int classificacao, int situacao, string matricula, DataTable dt)
         {
-            SqlConnection con = new SqlConnection(Conn.strConn);
-
             try
             {
                 if (con.State == System.Data.ConnectionState.Closed)
@@ -106,10 +102,8 @@ namespace NovoGEF.Database
         /// <param name="nome">Nome do associado.</param>
         /// <param name="dt">DataTable para preenchimento dos dados.</param>
         /// <returns>DataTable preenchido com os dados encontrados.</returns>
-        public DataTable SearchNome(string tipo, int classificacao, int situacao, string nome, DataTable dt)
+        public string SearchNome(string tipo, int classificacao, int situacao, string nome, DataTable dt)
         {
-            SqlConnection con = new SqlConnection(Conn.strConn);
-
             try
             {
                 if (con.State == System.Data.ConnectionState.Closed)
@@ -142,10 +136,8 @@ namespace NovoGEF.Database
         /// <param name="tipo">Tipo do associado.</param>
         /// <param name="dt">DataTable para preenchimento dos dados.</param>
         /// <returns>DataTable preenchido com os dados encontrados.</returns>
-        public DataTable SearchIdNome(string tipo, DataTable dt)
+        public string SearchIdNome(string tipo, DataTable dt)
         {
-            SqlConnection con = new SqlConnection(Conn.strConn);
-
             try
             {
                 if (con.State == System.Data.ConnectionState.Closed)
@@ -174,7 +166,7 @@ namespace NovoGEF.Database
         /// </summary>
         /// <param name="associado">Objeto Associado a ser inserido.</param>
         /// <returns>DataTable preenchido com os dados do associado atualizado.</returns>
-        public DataTable Update(Associado associado)
+        public string Update(Associado associado)
         {
             var sql = "UPDATE [dbo].[geftb002_associado] SET " +
 			          "dt_ini 				= 	@dt_ini, " +
