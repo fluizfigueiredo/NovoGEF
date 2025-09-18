@@ -17,34 +17,46 @@ namespace NovoGEF.Database
     /// </summary>
     public class AtividadeContext
     {
+        private readonly string connectionString = Conn.StrConn;
+
         /// <summary>
         /// Busca atividades conforme o status de ativo/inativo.
         /// </summary>
         /// <param name="ativo">Indica se busca atividades ativas (0) ou inativas (1).</param>
         /// <param name="dt">DataTable para preenchimento dos dados.</param>
         /// <returns>DataTable preenchido com os dados encontrados.</returns>
-        public string Search(int ativo, DataTable dt)
+        public string Search(int ativo, Atividade atividade)
         {
+            if ativo = 0
+            {
+                var sql = "SELECT id_atividade, sigla, descricao, grupo, subgrupo, " +
+                          "hr_ini, hr_fim, dt_ini, dt_fim, diasemana, periodo, " +
+                          "dt_gravacao, geftb001_usuario_id_usuario " +
+                		  "FROM geftb003_atividade WHERE dt_fim IS NULL;"
+            }
+            else
+            {
+                var sql = "SELECT id_atividade, sigla, descricao, grupo, subgrupo, " +
+                          "hr_ini, hr_fim, dt_ini, dt_fim, diasemana, periodo, " +
+                          "dt_gravacao, geftb001_usuario_id_usuario " +
+                		  "FROM geftb003_atividade WHERE dt_fim IS NOT NULL;"
+            }
             try
             {
-                if (con.State == System.Data.ConnectionState.Closed)
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, con))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
                 }
-                SqlDataAdapter da = new SqlDataAdapter(null, con);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.CommandText = "sp_buscar_geftb003";
-                da.SelectCommand.Parameters.AddWithValue("@ativo", ativo);
-                da.Fill(dt);
+                 return "";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Houve uma falha no banco de dados ao buscar os dados. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }finally
-            {
-                con.Close();
+                return "Houve uma falha no banco de dados ao alterar os dados do associado. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace;
             }
-            return dt;
         }
 
         /// <summary>
@@ -53,29 +65,26 @@ namespace NovoGEF.Database
         /// <param name="sigla">Sigla da atividade.</param>
         /// <param name="dt">DataTable para preenchimento dos dados.</param>
         /// <returns>DataTable preenchido com os dados encontrados.</returns>
-        public string SearchHorario(string sigla, DataTable dt)
+        public string SearchHorario(Atividade atividade)
         {
+            var sql = "SELECT hr_ini FROM geftb003_atividade WHERE sigla = @sigla;;"
             try
             {
-                if (con.State == System.Data.ConnectionState.Closed)
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@sigla", atividade.Sigla);
+                        cmd.ExecuteNonQuery();
+                    }
                 }
-                SqlDataAdapter da = new SqlDataAdapter(null, con);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.CommandText = "sp_buscar_horario_geftb003";
-                da.SelectCommand.Parameters.AddWithValue("@sigla", sigla);
-                da.Fill(dt);
+                 return "";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Houve uma falha no banco de dados ao buscar os dados. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return "Houve uma falha no banco de dados ao alterar os dados do associado. Por favor entre em contato com o administrador do sistema. " + ex.Message + ex.StackTrace;
             }
-            finally
-            {
-                con.Close();
-            }
-            return dt;
         }
 
         /// <summary>
@@ -108,7 +117,7 @@ namespace NovoGEF.Database
                     {
                         cmd.Parameters.AddWithValue("@id_atividade", atividade.Id_Atividade);
                         cmd.Parameters.AddWithValue("@dt_ini", atividade.Dt_Ini);
-                        cmd.Parameters.AddWithValue("@dt_fim", atividade.Dt_Fim;
+                        cmd.Parameters.AddWithValue("@dt_fim", atividade.Dt_Fim);
                         cmd.Parameters.AddWithValue("@sigla", atividade.Sigla);
                         cmd.Parameters.AddWithValue("@descricao", atividade.Descricao);
                         cmd.Parameters.AddWithValue("@grupo", atividade.Grupo);
@@ -172,7 +181,7 @@ namespace NovoGEF.Database
                     {
                         cmd.Parameters.AddWithValue("@id_atividade", atividade.Id_Atividade);
                         cmd.Parameters.AddWithValue("@dt_ini", atividade.Dt_Ini);
-                        cmd.Parameters.AddWithValue("@dt_fim", atividade.Dt_Fim;
+                        cmd.Parameters.AddWithValue("@dt_fim", atividade.Dt_Fim);
                         cmd.Parameters.AddWithValue("@sigla", atividade.Sigla);
                         cmd.Parameters.AddWithValue("@descricao", atividade.Descricao);
                         cmd.Parameters.AddWithValue("@grupo", atividade.Grupo);
