@@ -22,7 +22,7 @@ namespace NovoGEF.Database
     /// </summary>
     public class AssociadoContext
     {
-        private readonly string connectionString = Conn.StrConn;
+        private readonly string connectionString = Conn.StrConn
         /// <summary>
         /// Busca associados conforme tipo, classificação e situação.
         /// </summary>
