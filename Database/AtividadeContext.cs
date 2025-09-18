@@ -112,8 +112,8 @@ namespace NovoGEF.Database
                         cmd.Parameters.AddWithValue("@sigla", atividade.Sigla);
                         cmd.Parameters.AddWithValue("@descricao", atividade.Descricao);
                         cmd.Parameters.AddWithValue("@grupo", atividade.Grupo);
-                        cmd.Parameters.AddWithValue("@subgrupo", atividade.Subgrupo);
-                        cmd.Parameters.AddWithValue("@diasemana", atividade.Diasemana);
+                        cmd.Parameters.AddWithValue("@subgrupo", atividade.SubGrupo);
+                        cmd.Parameters.AddWithValue("@diasemana", atividade.DiaSemana);
                         cmd.Parameters.AddWithValue("@periodo", atividade.Periodo);
                         cmd.Parameters.AddWithValue("@hr_ini", atividade.Hr_Ini);
                         cmd.Parameters.AddWithValue("@hr_fim", atividade.Hr_Fim);
@@ -176,8 +176,8 @@ namespace NovoGEF.Database
                         cmd.Parameters.AddWithValue("@sigla", atividade.Sigla);
                         cmd.Parameters.AddWithValue("@descricao", atividade.Descricao);
                         cmd.Parameters.AddWithValue("@grupo", atividade.Grupo);
-                        cmd.Parameters.AddWithValue("@subgrupo", atividade.Subgrupo);
-                        cmd.Parameters.AddWithValue("@diasemana", atividade.Diasemana);
+                        cmd.Parameters.AddWithValue("@subgrupo", atividade.SubGrupo);
+                        cmd.Parameters.AddWithValue("@diasemana", atividade.DiaSemana);
                         cmd.Parameters.AddWithValue("@periodo", atividade.Periodo);
                         cmd.Parameters.AddWithValue("@hr_ini", atividade.Hr_Ini);
                         cmd.Parameters.AddWithValue("@hr_fim", atividade.Hr_Fim);
